@@ -164,10 +164,9 @@ Cheng, K., Long, X., Yang, K., Yao, Y., Yin, W., Ma, Y., Wang, W., and Chen,
 
 \bibitem{Zhou26_GDAGS}
 Zhou, Z., Xiong, Y.-J., Zhang, J.-C., Xia, C.-M., Qiu, X., and Zhan, H.,
-  ``Gradient-direction-aware density control for {3D} {Gaussian} splatting,''
-  in [{\em Proc.\ International Conference on Learning Representations
-  (ICLR)}{\nolinebreak\hspace{0.1em}]},  (2026).
-\newblock Also arXiv:2508.09239. Available: https://arxiv.org/abs/2508.09239.
+  ``Gradient-direction-aware density control for {3D} {Gaussian} splatting.''
+  arXiv preprint arXiv:2508.09239 (2025).
+\newblock DOI: https://doi.org/10.48550/arXiv.2508.09239.
 
 \bibitem{Zheng25_NexusGS}
 Zheng, Y., Jiang, Z., He, S., Sun, Y., Dong, J., Zhang, H., and Du, Y.,
@@ -193,10 +192,8 @@ Xiong, H., Muttukuru, S., Upadhyay, R., Chari, P., and Kadambi, A.,
 \bibitem{Fang26_DropAnSH}
 Fang, S., Shen, I.-C., Zhang, X., Wang, Z., Wang, Y., Ding, W., Yu, G., and
   Igarashi, T., ``Dropping anchor and spherical harmonics for sparse-view
-  {Gaussian} splatting,'' in [{\em Proc.\ IEEE/CVF Conference on Computer
-  Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
-  33312--33322 (2026).
-\newblock Available: https://arxiv.org/abs/2602.20933.
+  {Gaussian} splatting.'' arXiv preprint arXiv:2602.20933 (2026).
+\newblock DOI: https://doi.org/10.48550/arXiv.2602.20933.
 
 \bibitem{Wang24_DUSt3R}
 Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B., and Revaud, J., ``{DUSt3R}:
@@ -294,10 +291,9 @@ Fang, G. and Wang, B., ``Mini-splatting: Representing scenes with a constrained
 \bibitem{Song26_D2GS}
 Song, M., Lin, X., Zhang, D., Li, H., Li, X., Du, B., and Qi, L.,
   ``{D\textsuperscript{2}GS}: Depth-and-density guided gaussian splatting for
-  stable and accurate sparse-view reconstruction,'' in [{\em Proc.\
-  International Conference on Learning Representations
-  (ICLR)}{\nolinebreak\hspace{0.1em}]},  (2026).
-\newblock Also arXiv:2510.08566. Available: https://arxiv.org/abs/2510.08566.
+  stable and accurate sparse-view reconstruction.'' arXiv preprint
+  arXiv:2510.08566 (2025).
+\newblock DOI: https://doi.org/10.48550/arXiv.2510.08566.
 
 \bibitem{Barron22_MipNeRF360}
 Barron, J.~T., Mildenhall, B., Verbin, D., Srinivasan, P.~P., and Hedman, P.,

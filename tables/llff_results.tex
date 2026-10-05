@@ -1,23 +1,23 @@
 % Table 2 — data from latex/FFLL数据集/formatting-instructions-latex.tex (unchanged numbers)
 \begin{table}[ht!]
 \centering
-\caption{\label{tab:llff} Performance comparisons of sparse-view synthesis on the LLFF 360 dataset (4/6/9 views). LPIPS$^{*}$ denotes LPIPS $\times 10^{2}$.}
+\caption{\label{tab:llff} Performance comparisons of sparse-view synthesis on LLFF (4/6/9 views). LPIPS$^{*}$ denotes LPIPS $\times 10^{2}$.}
 \setlength{\tabcolsep}{2.8mm}
-\renewcommand{\arraystretch}{1}
+\renewcommand{\arraystretch}{1.08}
 \adjustbox{width=1\linewidth}{%
-\begin{tabular}{c c | ccc | ccc | ccc}
+\begin{tabular}{c l | ccc | ccc | ccc}
 \toprule
 \multirow{2}{*}{}
-  & \multirow{2}{*}{\centering Methods}
-  & \multicolumn{3}{c|}{LLFF 360 (4-view)}
-  & \multicolumn{3}{c|}{LLFF 360 (6-view)}
-  & \multicolumn{3}{c}{LLFF 360 (9-view)} \\
+  & \multirow{2}{*}{Methods}
+  & \multicolumn{3}{c|}{LLFF (4-view)}
+  & \multicolumn{3}{c|}{LLFF (6-view)}
+  & \multicolumn{3}{c}{LLFF (9-view)} \\
 &
   & LPIPS$^{*}$$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$
   & LPIPS$^{*}$$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$
   & LPIPS$^{*}$$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$ \\
-\toprule
-\multirow{4}{*}{\rotatebox{90}{\scriptsize NeRF-based}}
+\midrule
+\sidelabel{2}{NeRF-based}
   & RegNeRF
       & 29.65 & 18.55 & 0.587
       & 22.61 & 19.08 & 0.760
@@ -26,7 +26,8 @@
       & 30.85 & 19.09 & 0.624
       & 23.06 & 19.81 & 0.763
       & 17.94 & 23.08 & 0.823 \\
-\multirow{8}{*}{\rotatebox{90}{\scriptsize 3DGS-based}}
+\addlinespace[4pt]
+\sidelabel{5}{3DGS-based}
   & 3DGS
       &22.93 & 19.32 & 0.649
       &13.45 & 23.80 & 0.814
@@ -47,7 +48,7 @@
       &\cellcolor{color_blue}16.92 &\cellcolor{color_blue}23.92 &\cellcolor{color_blue}0.762
       &\cellcolor{blue!8}12.54 &\cellcolor{color_blue}25.17 &\cellcolor{color_blue}0.848
       &\cellcolor{blue!8}8.96 &\cellcolor{blue!8}26.71 &\cellcolor{blue!8}0.871 \\
-\toprule
+\bottomrule
 \end{tabular}%
 }
 \end{table}

@@ -1,4 +1,4 @@
-\documentclass[a4paper,nocompress]{spie}  % A4 (ISIP / checklist)
+\documentclass[a4paper]{spie}  % A4; compressed in-text cites [4,5]
 
 \renewcommand{\baselinestretch}{1.0}
 
@@ -6,22 +6,31 @@
 \oddsidemargin -0.61cm
 \evensidemargin -0.61cm
 
-\usepackage{times}  % Times / TNR text (checklist; avoids mathptmx rsfs deps)
+\usepackage{times}
+\usepackage{mathptmx}  % Times math (rsfs installed)
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
 \usepackage{booktabs,multirow,adjustbox}
 \usepackage{float}
 \usepackage[table]{xcolor}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[colorlinks=false]{hyperref}
 \input{tables/table_style}
 
-% Checklist: in-text citations as superscript [n]
-\renewcommand{\citeform}[1]{[#1]}
+% Checklist: superscript [n] / [4,5] wrapping the whole cite list
+\renewcommand{\citeform}[1]{#1}
+\renewcommand{\citepunct}{,}
+\makeatletter
+\AtBeginDocument{%
+  \def\@citess#1{\mbox{$\m@th^{\hbox{\OverciteFont{[#1]}}}$}}%
+}
+\makeatother
+\renewcommand{\Authsep}{, }
+\renewcommand{\Authands}{, and }
 
 \title{SynGS: synergizing explicit geometry and transformer depth priors for sparse-view 3D Gaussian Splatting}
 
-\author[a,*]{Junjie Geng}
-\author[a]{Ao Zhang}
+\author[a,*]{Junjie Geng}%
+\author[a]{Ao Zhang}%
 \author[a]{Lian Duan}
 \affil[a]{Communication University of China, State Key Laboratory of Media Convergence and Communication, Intelligent Network and Media Research Center, No. 1 Dingfuzhuang East Street, Chaoyang District, Beijing 100024, China}
 
@@ -39,7 +48,7 @@ L.D.: E-mail: dlhchyh@163.com}
 In 360-degree scenes captured with sparse views, 3D Gaussian Splatting (3DGS) reconstruction is susceptible to the loss of edge detail, geometric instability in occluded regions, and overfitting to foreground regions. To mitigate these challenges under sparse-view conditions, we present SynGS, a 3D Gaussian Splatting method guided by geometric and depth priors for sparse-view 3D reconstruction. The proposed method leverages the visual hull to impose explicit geometric constraints and integrates a Transformer-based depth prior to facilitate global cross-view consistency, complemented by a geometry enhancement pipeline. By combining reliable depth filtering with fine-grained structural detail recovery and incorporating a dynamic visibility regularization strategy, our approach enables adaptive reweighting of supervision signals during optimization. Empirical evaluations demonstrate that SynGS achieves competitive performance, particularly in PSNR and SSIM. On the Mip-NeRF 360 dataset, SynGS achieves gains of up to 3.56~dB in PSNR and 0.025 in SSIM under sparse-view settings.
 \end{abstract}
 
-\keywords{Novel View Synthesis, 3D Gaussian Splatting, Few-shot reconstruction, Geometry Prior-Guided Reconstruction, Vision Transformer.}
+\keywords{Novel View Synthesis, 3D Gaussian Splatting, Few-shot reconstruction, Geometry Prior-Guided Reconstruction, Vision Transformer}
 
 \input{sections/01_introduction}
 \input{sections/02_related_work}

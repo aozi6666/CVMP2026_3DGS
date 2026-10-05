@@ -3,33 +3,32 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: spiebib.bst
 Database file #1: references.bib
-Warning--empty volume in Xiong24_SparseGS
 You've used 55 entries,
             1993 wiz_defined-function locations,
-            863 strings with 18382 characters,
-and the built_in function-call counts, 19120 in all, are:
-= -- 1809
+            863 strings with 18401 characters,
+and the built_in function-call counts, 19133 in all, are:
+= -- 1807
 > -- 988
 < -- 0
 + -- 348
 - -- 293
-* -- 1569
-:= -- 2579
+* -- 1570
+:= -- 2577
 add.period$ -- 110
 call.type$ -- 55
 change.case$ -- 55
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 755
-empty$ -- 1675
+cite$ -- 55
+duplicate$ -- 758
+empty$ -- 1682
 format.name$ -- 293
-if$ -- 4584
+if$ -- 4589
 int.to.chr$ -- 0
 int.to.str$ -- 55
 missing$ -- 40
 newline$ -- 223
 num.names$ -- 55
-pop$ -- 216
+pop$ -- 220
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
@@ -41,8 +40,7 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
+warning$ -- 0
 while$ -- 166
 width$ -- 57
-write$ -- 559
-(There was 1 warning)
+write$ -- 558

@@ -199,8 +199,9 @@ Patle, G., Girgaonkar, N., Somraj, N., and Soundararajan, R., ``{AD-GS}:
 
 \bibitem{Xiong24_SparseGS}
 Xiong, H., Muttukuru, S., Upadhyay, R., Chari, P., and Kadambi, A.,
-  ``{SparseGS}: Real-time 360$^\circ$ sparse view synthesis using gaussian
-  splatting,'' {\em arXiv preprint arXiv:2312.00206}  (2024).
+  ``{SparseGS}: Real-time 360$^\circ$ sparse view synthesis using {Gaussian}
+  splatting,'' in [{\em Proc.\ International Conference on 3D Vision
+  (3DV)}{\nolinebreak\hspace{0.1em}]},  (2025).
 \newblock DOI: https://doi.org/10.1109/3dv66043.2025.00100.
 
 \bibitem{Fang26_DropAnSH}
@@ -209,7 +210,7 @@ Fang, S., Shen, I.-C., Zhang, X., Wang, Z., Wang, Y., Ding, W., Yu, G., and
   {Gaussian} splatting,'' in [{\em Proc.\ IEEE/CVF Conference on Computer
   Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
   33312--33322 (2026).
-\newblock DOI: https://doi.org/10.1109/lsp.2026.3707490.
+\newblock Available: https://arxiv.org/abs/2602.20933.
 
 \bibitem{Wang24_DUSt3R}
 Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B., and Revaud, J., ``{DUSt3R}:

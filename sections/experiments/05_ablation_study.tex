@@ -1,8 +1,8 @@
 \subsection{Ablation Study}
 \label{sec:ablation}
 
-Table~\ref{tab:ablation} isolates the contributions of the three components under the same training settings.
+Table~\ref{tab:ablation} isolates the contributions of the three components. Unlike Table~\ref{tab:mip360}, which reports dataset-wide averages, the ablation is a separate protocol and is not the 4-view mean in Table~\ref{tab:mip360}.
 
 \input{tables/ablation}
 
-Visual Hull Initialization establishes the geometric baseline at 17.51~dB PSNR. Adding Depth Densification raises PSNR to 24.96~dB, the largest gain in the ablation. Adding DVR further improves the full configuration to 26.18~dB, with gains in SSIM and LPIPS. Across normalized distance intervals, SynGS keeps higher average gradient magnitudes than the baseline, most clearly in the $0.8$--$1.0$ range (about $0.2$ vs.\ $1.2$), indicating stronger supervision on distant, weakly visible primitives.
+Visual Hull Initialization establishes the geometric baseline at 17.51~dB PSNR. Adding Depth Densification raises PSNR to 24.96~dB, the largest gain in the ablation. Adding DVR further improves the full configuration to 26.18~dB, with gains in SSIM and LPIPS.

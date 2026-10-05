@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.30)  2 OCT 2026 12:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.30)  5 OCT 2026 12:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**main
+**main.tex
 (./main.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
@@ -46,6 +46,42 @@ LaTeX Info: Redefining \cite on input line 441.
 a4paper used
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
+)
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
 )
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2026/05/19 v2.18d AMS math features
@@ -117,9 +153,8 @@ LaTeX Info: Redefining \] on input line 2966.
 )
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+\symAMSa=\mathgroup6
+\symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
@@ -338,7 +373,7 @@ File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4070.
+Package hyperref Info: Option `colorlinks' set `false' on input line 4070.
 Package hyperref Info: Hyper figures OFF on input line 4199.
 Package hyperref Info: Link nesting OFF on input line 4204.
 Package hyperref Info: Hyper index ON on input line 4207.
@@ -369,7 +404,7 @@ Package hyperref Info: Hyper figures OFF on input line 6091.
 Package hyperref Info: Link nesting OFF on input line 6096.
 Package hyperref Info: Hyper index ON on input line 6099.
 Package hyperref Info: backreferencing OFF on input line 6106.
-Package hyperref Info: Link coloring ON on input line 6109.
+Package hyperref Info: Link coloring OFF on input line 6111.
 Package hyperref Info: Link coloring with OCG OFF on input line 6116.
 Package hyperref Info: PDF/A mode OFF on input line 6121.
 \Hy@abspage=\count314
@@ -395,8 +430,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip60
 ) (./tables/table_style.tex)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 3
-5.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
+4.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -408,24 +443,24 @@ File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -451,25 +486,52 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 35.
+Package hyperref Info: Link coloring OFF on input line 44.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 
 ptm-font_in_spiecls
-LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
-
-(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
+ 46.
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
+ 46.
 
-
-(/usr/local/texlive/2026basic/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
+ 46.
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
+ 46.
+
+(/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+
 (./sections/01_introduction.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
 .
 
@@ -500,15 +562,15 @@ Package pdftex.def Info: figures/vggt_depth.pdf  used on input line 8.
 [4 <./figures/vggt_depth.pdf>])) (./sections/04_experiments.tex
 (./sections/experiments/01_experimental_setup.tex)
 (./sections/experiments/02_quantitative_and_qualitative.tex
-(./tables/mip360_results.tex) (./tables/llff_results.tex) [5]
-<figures/qualitative.png, id=271, 1189.44376pt x 405.515pt>
+(./tables/mip360_results.tex) (./tables/llff_results.tex)
+<figures/qualitative.png, id=256, 1189.44376pt x 405.515pt>
 File: figures/qualitative.png Graphic file (type png)
 <use figures/qualitative.png>
 Package pdftex.def Info: figures/qualitative.png  used on input line 21.
 (pdftex.def)             Requested size: 487.8225pt x 166.31172pt.
 )
 (./sections/experiments/05_ablation_study.tex (./tables/ablation.tex)))
-(./sections/05_conclusion.tex) (./main.bbl [6 <./figures/qualitative.png>]
+(./sections/05_conclusion.tex [5]) (./main.bbl [6 <./figures/qualitative.png>]
 [7]
 Underfull \hbox (badness 3657) in paragraph at lines 168--172
 []\OT1/ptm/m/n/10 Bao, Z., Liao, G., Zhou, K., Liu, K., Li, Q., and Qiu, G., ``
@@ -534,26 +596,14 @@ Underfull \hbox (badness 1248) in paragraph at lines 174--178
 Xiv preprint arXiv:2402.14650 (2024).  Avail-able:
  []
 
-
-Underfull \hbox (badness 3646) in paragraph at lines 201--205
-[]\OT1/ptm/m/n/10 Xiong, H., Mut-tukuru, S., Upad-hyay, R., Chari, P., and Kada
-mbi, A., ``SparseGS: Real-time 360$[]$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--205
-\OT1/ptm/m/n/10 sparse view syn-the-sis us-ing gaus-sian splat-ting,'' \OT1/ptm
-/m/it/10 arXiv preprint arXiv:2312.00206 \OT1/ptm/m/n/10 (2024).  DOI:
- []
-
 [8]
-Underfull \hbox (badness 1152) in paragraph at lines 361--365
+Underfull \hbox (badness 1152) in paragraph at lines 362--366
 []\OT1/ptm/m/n/10 Wang, Z., Bovik, A. C., Sheikh, H. R., and Si-mon-celli, E. P
 ., ``Im-age qual-ity as-sess-ment: From er-ror
  []
 
 
-Underfull \hbox (badness 1107) in paragraph at lines 361--365
+Underfull \hbox (badness 1107) in paragraph at lines 362--366
 \OT1/ptm/m/n/10 vis-i-bil-ity to struc-tural sim-i-lar-ity,'' \OT1/ptm/m/it/10 
 IEEE Trans-ac-tions on Im-age Pro-cess-ing \OT1/ptm/b/n/10 13\OT1/ptm/m/n/10 (4
 ), 600--612 (2004).  DOI:
@@ -568,33 +618,27 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 19016ED649CA21CB37AC132D5D7AFD20;2652.
  ) 
 Here is how much of TeX's memory you used:
- 12294 strings out of 468531
- 193359 string characters out of 5442128
- 649411 words of memory out of 5000000
- 41124 multiletter control sequences out of 15000+600000
- 655911 words of font info for 98 fonts, out of 8000000 for 9000
+ 12397 strings out of 468531
+ 195238 string characters out of 5442128
+ 648899 words of memory out of 5000000
+ 41209 multiletter control sequences out of 15000+600000
+ 674945 words of font info for 141 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 74i,12n,83p,1396b,555s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,12n,83p,1400b,558s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
 0.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr7.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr9.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2026basic/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2026basic/texmf-dist/
-fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026basic/texmf-dist/fonts
-/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type
-1/urw/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 3664873 bytes).
+cm/cmr10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/rs
+fs/rsfs10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/symbol/u
+syr.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/symbol/usyr.pf
+b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
+sr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
+cal/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (9 pages, 3599369 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
+ 363 PDF objects out of 1000 (max. 8388607)
+ 321 compressed objects within 4 object streams
  92 named destinations out of 1000 (max. 500000)
  136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

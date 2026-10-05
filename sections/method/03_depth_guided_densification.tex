@@ -1,11 +1,11 @@
-\subsection{VGGT / Depth-Guided Densification}
+\subsection{VGGT-Guided Densification}
 \label{sec:depth_densify}
 
 Silhouettes alone miss concave regions and fine structures. We densify the Visual Hull point cloud with \textbf{VGGT-Depth}: from a pre-trained VGGT backbone~\cite{Wang25_VGGT}, a depth prior adaptation branch with cross-attention over multi-view tokens and a lightweight fusion head predicts per-view depth and confidence. Unlike a frozen monocular depth network~\cite{Yang24_DepthAnythingV2}, the adaptation branch is conditioned on multi-view tokens (Figure~\ref{fig:vggt_depth}).
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\textwidth]{figures/vggt_depth.pdf}
+\includegraphics[width=0.90\textwidth]{figures/vggt_depth.pdf}
 \caption{\label{fig:vggt_depth} VGGT-Depth prior used for depth-guided point cloud densification.}
 \end{figure}
 

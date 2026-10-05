@@ -95,20 +95,6 @@ Mildenhall, B., Srinivasan, P.~P., Tancik, M., Barron, J.~T., Ramamoorthi, R.,
   synthesis,'' {\em Communications of the ACM}~{\bf 65}(1),  99--106 (2021).
 \newblock DOI: https://doi.org/10.1145/3503250.
 
-\bibitem{Jain21_DietNeRF}
-Jain, A., Tancik, M., and Abbeel, P., ``Putting {NeRF} on a diet: Semantically
-  consistent few-shot view synthesis,'' in [{\em Proc.\ IEEE/CVF International
-  Conference on Computer Vision (ICCV)}{\nolinebreak\hspace{0.1em}]},
-  5885--5894 (2021).
-\newblock DOI: https://doi.org/10.1109/iccv48922.2021.00583.
-
-\bibitem{Kim22_InfoNeRF}
-Kim, M., Seo, S., and Han, B., ``{InfoNeRF}: Ray entropy minimization for
-  few-shot neural volume rendering,'' in [{\em Proc.\ IEEE/CVF Conference on
-  Computer Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
-    12912--12921 (2022).
-\newblock DOI: https://doi.org/10.1109/cvpr52688.2022.01257.
-
 \bibitem{Wang23_SparseNeRF}
 Wang, G., Chen, Z., Loy, C.~C., and Liu, Z., ``{SparseNeRF}: Distilling depth
   ranking for few-shot novel view synthesis,'' in [{\em Proc.\ IEEE/CVF
@@ -226,11 +212,6 @@ Fan, Z., Cong, W., Wen, K., Wang, K., Zhang, J., Ding, X., Xu, D., Ivanovic,
   preprint arXiv:2403.20309 (2024).
 \newblock DOI: https://doi.org/10.1109/iccv51701.2025.02360.
 
-\bibitem{Leroy24_MASt3R}
-Leroy, V., Cabon, Y., and Revaud, J., ``Grounding image matching in {3D} with
-  {MASt3R}.'' arXiv preprint arXiv:2406.09756 (2024).
-\newblock DOI: https://doi.org/10.1007/978-3-031-73220-1\_5.
-
 \bibitem{Charatan24_pixelSplat}
 Charatan, D., Li, S.~L., Tagliasacchi, A., and Sitzmann, V., ``{pixelSplat}:
   {3D} {Gaussian} splats from image pairs for scalable generalizable {3D}
@@ -259,12 +240,6 @@ Yang, L., Kang, B., Huang, Z., Zhao, Z., Xu, X., Feng, J., and Zhao, H.,
   (2024).
 \newblock DOI: https://doi.org/10.52202/079017-0688.
 
-\bibitem{Bochkovskii24_DepthPro}
-Bochkovskii, A., Delaunoy, A., Germain, H., Santos, M., Zhou, Y., Richter,
-  S.~R., and Koltun, V., ``Depth pro: Sharp monocular metric depth in less than
-  a second.'' arXiv preprint arXiv:2410.02073 (2024).
-\newblock Available: https://arxiv.org/abs/2410.02073.
-
 \bibitem{Wang24_MoGe}
 Wang, R., Xu, S., Dai, C., Xiang, J., Deng, Y., Tong, X., and Yang, J.,
   ``{MoGe}: Unlocking accurate monocular geometry estimation for open-domain
@@ -291,26 +266,6 @@ Laurentini, A., ``The visual hull concept for silhouette-based image
   understanding,'' {\em IEEE Transactions on Pattern Analysis and Machine
   Intelligence}~{\bf 16}(2),  150--162 (1994).
 \newblock DOI: https://doi.org/10.1109/34.273735.
-
-\bibitem{Lysykh25_VisualHull}
-Lysykh, A.~I., Zhdanov, D.~D., and Sorokin, M.~I., ``Method of geometry
-  reconstruction from a set of {RGB} images using differentiable rendering and
-  visual hull,'' {\em Programming and Computer Software}~{\bf 51}(3),  150--159
-  (2025).
-\newblock DOI: https://doi.org/10.1134/s0361768825700033.
-
-\bibitem{Balta18_SOR}
-Balta, H., Velagic, J., Bosschaerts, W., Cubber, G.~D., and Siciliano, B.,
-  ``Fast statistical outlier removal based method for large {3D} point clouds
-  of outdoor environments,'' {\em IFAC-PapersOnLine}~{\bf 51}(22),  348--353
-  (2018).
-\newblock DOI: https://doi.org/10.1016/j.ifacol.2018.11.566.
-
-\bibitem{Yu24_GOF}
-Yu, Z., Sattler, T., and Geiger, A., ``Gaussian opacity fields: Efficient
-  adaptive surface reconstruction in unbounded scenes.'' arXiv preprint
-  arXiv:2404.10772 (2024).
-\newblock DOI: https://doi.org/10.1145/3687937.
 
 \bibitem{Zhang24_RaDeGS}
 Zhang, B., Fang, C., Shrestha, R., Liang, Y., Long, X., and Tan, P.,
@@ -357,18 +312,5 @@ Mildenhall, B., Srinivasan, P.~P., Ortiz-Cayon, R., Kalantari, N.~K.,
   view synthesis with prescriptive sampling guidelines,'' {\em ACM Transactions
   on Graphics}~{\bf 38}(4),  29:1--29:14 (2019).
 \newblock DOI: https://doi.org/10.1145/3355089.3356577.
-
-\bibitem{Wang04_SSIM}
-Wang, Z., Bovik, A.~C., Sheikh, H.~R., and Simoncelli, E.~P., ``Image quality
-  assessment: From error visibility to structural similarity,'' {\em IEEE
-  Transactions on Image Processing}~{\bf 13}(4),  600--612 (2004).
-\newblock DOI: https://doi.org/10.1109/tip.2003.819861.
-
-\bibitem{Zhang18_LPIPS}
-Zhang, R., Isola, P., Efros, A.~A., Shechtman, E., and Wang, O., ``The
-  unreasonable effectiveness of deep features as a perceptual metric,'' in
-  [{\em Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition
-  (CVPR)}{\nolinebreak\hspace{0.1em}]},   586--595 (2018).
-\newblock DOI: https://doi.org/10.1109/cvpr.2018.00068.
 
 \end{thebibliography}

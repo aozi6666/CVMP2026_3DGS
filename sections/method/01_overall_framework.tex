@@ -5,8 +5,8 @@ We propose SynGS, a sparse-view 3D Gaussian Splatting~\cite{Kerbl23_3DGS} framew
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\textwidth]{figures/framework.pdf}
+\includegraphics[width=0.90\textwidth]{figures/framework.pdf}
 \caption{\label{fig:framework} Overview of the SynGS pipeline. The third stage applies Dynamic Visibility Regularization (DVR).}
 \end{figure}
 
-First, \textbf{Visual Hull Initialization} constructs a coarse geometric prior from multi-view silhouettes and generates an initial point cloud. Then, \textbf{VGGT / Depth-Guided Densification} exploits cross-view depth priors to supplement missing geometry and produce a depth-enhanced point cloud for Gaussian initialization. Finally, \textbf{Dynamic Visibility Regularization (DVR)} is applied during 3DGS optimization to rebalance supervision under sparse visibility and reduce overfitting. The complete process proceeds from the Visual Hull point cloud, through depth densification and Gaussian initialization, to DVR-regularized optimization.
+First, \textbf{Visual Hull Initialization} constructs a coarse geometric prior from multi-view silhouettes and generates an initial point cloud. Then, \textbf{VGGT-Guided Densification} exploits cross-view depth priors to supplement missing geometry and produce a depth-enhanced point cloud for Gaussian initialization. Finally, \textbf{Dynamic Visibility Regularization (DVR)} is applied during 3DGS optimization to rebalance supervision under sparse visibility and reduce overfitting. The complete process proceeds from the Visual Hull point cloud, through depth densification and Gaussian initialization, to DVR-regularized optimization.

@@ -2,20 +2,20 @@
 # Build SynGS paper and overwrite output/
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+ROOT="$(cd "$(dirname "$0")" && pwd)"
 cd "$ROOT"
 
 echo "==> [1/4] pdflatex (pass 1)"
-pdflatex -interaction=nonstopmode main
+pdflatex -interaction=nonstopmode main.tex
 
 echo "==> [2/4] bibtex"
 bibtex main
 
 echo "==> [3/4] pdflatex (pass 2)"
-pdflatex -interaction=nonstopmode main
+pdflatex -interaction=nonstopmode main.tex
 
 echo "==> [4/4] pdflatex (pass 3)"
-pdflatex -interaction=nonstopmode main
+pdflatex -interaction=nonstopmode main.tex
 
 mkdir -p output
 cp -f main.pdf main.log main.aux main.bbl main.blg main.out output/

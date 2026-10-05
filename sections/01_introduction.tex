@@ -6,6 +6,6 @@ Sparse inputs provide limited information about visible regions, causing 3D reco
 Existing sparse-view methods explore depth regularization~\cite{Li24_DNGaussian} and densification~\cite{Zhu24_FSGS}, or co-regularization and Gaussian dropout~\cite{Zhang24_CoRGS,Park25_DropGaussian}, but still struggle with fine structures and geometric consistency. We present SynGS, which strengthens Gaussian initialization with explicit geometric constraints and depth-guided densification, and applies Dynamic Visibility Regularization to reduce overfitting. The main contributions are:
 \begin{itemize}
 \item \textbf{Visual Hull Initialization.} We construct a visual hull from multi-view silhouettes as a stable geometric prior for Gaussian initialization.
-\item \textbf{VGGT / Depth-Guided Densification.} We back-project cross-view consistent depth predictions to supplement missing geometry for Gaussian initialization.
+\item \textbf{VGGT-Guided Densification.} We back-project cross-view consistent depth predictions to supplement missing geometry for Gaussian initialization.
 \item \textbf{Dynamic Visibility Regularization.} We randomly mask Gaussian primitives during training to rebalance gradients and alleviate sparse-view overfitting.
 \end{itemize}

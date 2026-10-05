@@ -1,0 +1,373 @@
+\begin{thebibliography}{10}
+
+\bibitem{Yang23_FreeNeRF}
+Yang, J., Pavone, M., and Wang, Y., ``{FreeNeRF}: Improving few-shot neural
+  rendering with free frequency regularization,'' in [{\em Proc.\ IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   8254--8263 (2023).
+\newblock DOI: https://doi.org/10.1109/cvpr52729.2023.00798.
+
+\bibitem{Niemeyer22_RegNeRF}
+Niemeyer, M., Barron, J.~T., Mildenhall, B., Sajjadi, M. S.~M., Geiger, A., and
+  Radwan, N., ``{RegNeRF}: Regularizing neural radiance fields for view
+  synthesis from sparse inputs,'' in [{\em Proc.\ IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+    5480--5490 (2022).
+\newblock DOI: https://doi.org/10.1109/cvpr52688.2022.00540.
+
+\bibitem{Kerbl23_3DGS}
+Kerbl, B., Kopanas, G., Leimk{\"u}hler, T., and Drettakis, G., ``{3D} gaussian
+  splatting for real-time radiance field rendering,'' {\em ACM Transactions on
+  Graphics}~{\bf 42}(4),  139:1--139:14 (2023).
+\newblock DOI: https://doi.org/10.1145/3592433.
+
+\bibitem{Lu24_ScaffoldGS}
+Lu, T., Yu, M., Xu, L., Xiangli, Y., Wang, L., Lin, D., and Dai, B.,
+  ``{Scaffold-GS}: Structured {3D} gaussians for view-adaptive rendering,'' in
+  [{\em Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   20654--20664 (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.01952.
+
+\bibitem{Yu24_MipSplatting}
+Yu, Z., Chen, A., Huang, B., Sattler, T., and Geiger, A., ``Mip-splatting:
+  Alias-free {3D} {Gaussian} splatting,'' in [{\em Proc.\ IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   19447--19456 (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.01839.
+
+\bibitem{Schonberger16_COLMAP}
+Sch{\"o}nberger, J.~L. and Frahm, J.-M., ``Structure-from-motion revisited,''
+  in [{\em Proc.\ IEEE Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   4104--4113 (2016).
+\newblock DOI: https://doi.org/10.1109/cvpr.2016.445.
+
+\bibitem{Chung24_DepthRegGS}
+Chung, J., Oh, J., and Lee, K.~M., ``Depth-regularized optimization for {3D}
+  gaussian splatting in few-shot images,'' in [{\em Proc.\ IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition Workshops
+  (CVPRW)}{\nolinebreak\hspace{0.1em}]},   811--820 (2024).
+\newblock DOI: https://doi.org/10.1109/cvprw63382.2024.00086.
+
+\bibitem{Xu25_DropoutGS}
+Xu, Y., Wang, L., Chen, M., Ao, S., Li, L., and Guo, Y., ``{DropoutGS}:
+  Dropping out gaussians for better sparse-view rendering,'' in [{\em Proc.\
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   701--710 (2025).
+\newblock DOI: https://doi.org/10.1109/cvpr52734.2025.00074.
+
+\bibitem{Park25_DropGaussian}
+Park, H., Ryu, G., and Kim, W., ``{DropGaussian}: Structural regularization for
+  sparse-view gaussian splatting,'' in [{\em Proc.\ IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+    21600--21609 (2025).
+\newblock DOI: https://doi.org/10.1109/cvpr52734.2025.02012.
+
+\bibitem{Somraj23_ViPNeRF}
+Somraj, N. and Soundararajan, R., ``{ViP-NeRF}: Visibility prior for sparse
+  input neural radiance fields,'' in [{\em Proc.\ ACM SIGGRAPH
+  Conference}{\nolinebreak\hspace{0.1em}]},   1--11 (2023).
+\newblock DOI: https://doi.org/10.1145/3588432.3591539.
+
+\bibitem{Li24_DNGaussian}
+Li, J., Zhang, J., Bai, X., Zheng, J., Ning, X., Zhou, J., and Gu, L.,
+  ``{DNGaussian}: Optimizing sparse-view {3D} gaussian radiance fields with
+  global-local depth normalization,'' in [{\em Proc.\ IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+    20775--20785 (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.01963.
+
+\bibitem{Zhu24_FSGS}
+Zhu, Z., Fan, Z., Jiang, Y., and Wang, Z., ``{FSGS}: Real-time few-shot view
+  synthesis using gaussian splatting,'' in [{\em Proc.\ European Conference on
+  Computer Vision (ECCV)}{\nolinebreak\hspace{0.1em}]},   145--163 (2024).
+\newblock DOI: https://doi.org/10.1007/978-3-031-72933-1\_9.
+
+\bibitem{Zhang24_CoRGS}
+Zhang, J., Li, J., Yu, X., Huang, L., Gu, L., Zheng, J., and Bai, X.,
+  ``{CoR-GS}: Sparse-view {3D} gaussian splatting via co-regularization,'' in
+  [{\em Proc.\ European Conference on Computer Vision
+  (ECCV)}{\nolinebreak\hspace{0.1em}]},   335--352 (2024).
+\newblock DOI: https://doi.org/10.1007/978-3-031-73232-4\_19.
+
+\bibitem{Mildenhall21_NeRF}
+Mildenhall, B., Srinivasan, P.~P., Tancik, M., Barron, J.~T., Ramamoorthi, R.,
+  and Ng, R., ``{NeRF}: Representing scenes as neural radiance fields for view
+  synthesis,'' {\em Communications of the ACM}~{\bf 65}(1),  99--106 (2021).
+\newblock DOI: https://doi.org/10.1145/3503250.
+
+\bibitem{Jain21_DietNeRF}
+Jain, A., Tancik, M., and Abbeel, P., ``Putting {NeRF} on a diet: Semantically
+  consistent few-shot view synthesis,'' in [{\em Proc.\ IEEE/CVF International
+  Conference on Computer Vision (ICCV)}{\nolinebreak\hspace{0.1em}]},
+  5885--5894 (2021).
+\newblock DOI: https://doi.org/10.1109/iccv48922.2021.00583.
+
+\bibitem{Kim22_InfoNeRF}
+Kim, M., Seo, S., and Han, B., ``{InfoNeRF}: Ray entropy minimization for
+  few-shot neural volume rendering,'' in [{\em Proc.\ IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+    12912--12921 (2022).
+\newblock DOI: https://doi.org/10.1109/cvpr52688.2022.01257.
+
+\bibitem{Wang23_SparseNeRF}
+Wang, G., Chen, Z., Loy, C.~C., and Liu, Z., ``{SparseNeRF}: Distilling depth
+  ranking for few-shot novel view synthesis,'' in [{\em Proc.\ IEEE/CVF
+  International Conference on Computer Vision
+  (ICCV)}{\nolinebreak\hspace{0.1em}]},   9031--9042 (2023).
+\newblock DOI: https://doi.org/10.1109/iccv51070.2023.00832.
+
+\bibitem{Deng22_DSNeRF}
+Deng, K., Liu, A., Zhu, J.-Y., and Ramanan, D., ``Depth-supervised {NeRF}:
+  Fewer views and faster training for free,'' in [{\em Proc.\ IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   12872--12881 (2022).
+\newblock DOI: https://doi.org/10.1109/cvpr52688.2022.01254.
+
+\bibitem{Truong23_SPARF}
+Truong, P., Rakotosaona, M.-J., Manhardt, F., and Tombari, F., ``{SPARF}:
+  Neural radiance fields from sparse and noisy poses,'' in [{\em Proc.\
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   4190--4200 (2023).
+\newblock DOI: https://doi.org/10.1109/cvpr52729.2023.00408.
+
+\bibitem{Wu24_ReconFusion}
+Wu, R., Mildenhall, B., Henzler, P., Park, K., Gao, R., Watson, D., Srinivasan,
+  P.~P., Verbin, D., Barron, J.~T., Poole, B., and Ho{\l}y{\'n}ski, A.,
+  ``{ReconFusion}: {3D} reconstruction with diffusion priors,'' in [{\em Proc.\
+  IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   21551--21561 (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.02036.
+
+\bibitem{Barron23_ZipNeRF}
+Barron, J.~T., Mildenhall, B., Verbin, D., Srinivasan, P.~P., and Hedman, P.,
+  ``{Zip-NeRF}: Anti-aliased grid-based neural radiance fields,'' in [{\em
+  Proc.\ IEEE/CVF International Conference on Computer Vision
+  (ICCV)}{\nolinebreak\hspace{0.1em}]},   19697--19705 (2023).
+\newblock DOI: https://doi.org/10.1109/iccv51070.2023.01804.
+
+\bibitem{Yariv23_BakedSDF}
+Yariv, L., Hedman, P., Reiser, C., Verbin, D., Srinivasan, P.~P., Szeliski, R.,
+  Barron, J.~T., and Mildenhall, B., ``{BakedSDF}: Meshing neural {SDFs} for
+  real-time view synthesis.'' arXiv preprint arXiv:2302.14859 (2023).
+\newblock DOI: https://doi.org/10.1145/3588432.3591536.
+
+\bibitem{Guedon24_SuGaR}
+Gu{\'e}don, A. and Lepetit, V., ``{SuGaR}: Surface-aligned {Gaussian} splatting
+  for efficient {3D} mesh reconstruction and high-quality mesh rendering,'' in
+  [{\em Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   5354--5363 (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.00512.
+
+\bibitem{Huang24_2DGS}
+Huang, B., Yu, Z., Chen, A., Geiger, A., and Gao, S., ``{2D} {Gaussian}
+  splatting for geometrically accurate radiance fields.'' arXiv preprint
+  arXiv:2403.17888 (2024).
+\newblock DOI: https://doi.org/10.1145/3641519.3657428.
+
+\bibitem{Bao25_LoopSparseGS}
+Bao, Z., Liao, G., Zhou, K., Liu, K., Li, Q., and Qiu, G., ``{LoopSparseGS}:
+  Loop-based sparse-view friendly {Gaussian} splatting,'' {\em IEEE
+  Transactions on Image Processing}~{\bf 34},  3889--3902 (2025).
+\newblock DOI: https://doi.org/10.1109/TIP.2025.3574929.
+
+\bibitem{Cheng24_GaussianPro}
+Cheng, K., Long, X., Yang, K., Yao, Y., Yin, W., Ma, Y., Wang, W., and Chen,
+  X., ``{GaussianPro}: {3D} {Gaussian} splatting with progressive
+  propagation.'' arXiv preprint arXiv:2402.14650 (2024).
+\newblock Available: https://arxiv.org/abs/2402.14650.
+
+\bibitem{Zhou26_GDAGS}
+Zhou, Z., Xiong, Y.-J., Zhang, J.-C., Xia, C.-M., Qiu, X., and Zhan, H.,
+  ``Gradient-direction-aware density control for {3D} {Gaussian} splatting,''
+  in [{\em Proc.\ International Conference on Learning Representations
+  (ICLR)}{\nolinebreak\hspace{0.1em}]},  (2026).
+\newblock Also arXiv:2508.09239. Available: https://arxiv.org/abs/2508.09239.
+
+\bibitem{Zheng25_NexusGS}
+Zheng, Y., Jiang, Z., He, S., Sun, Y., Dong, J., Zhang, H., and Du, Y.,
+  ``{NexusGS}: Sparse view synthesis with epipolar depth priors in {3D}
+  {Gaussian} splatting,'' in [{\em Proc.\ IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+  26800--26809 (2025).
+\newblock DOI: https://doi.org/10.1109/cvpr52734.2025.02496.
+
+\bibitem{Patle25_ADGS}
+Patle, G., Girgaonkar, N., Somraj, N., and Soundararajan, R., ``{AD-GS}:
+  Alternating densification for sparse-input {3D} {Gaussian} splatting.'' arXiv
+  preprint arXiv:2509.11003 (2025).
+\newblock DOI: https://doi.org/10.1145/3757377.3763993.
+
+\bibitem{Xiong24_SparseGS}
+Xiong, H., Muttukuru, S., Upadhyay, R., Chari, P., and Kadambi, A.,
+  ``{SparseGS}: Real-time 360$^\circ$ sparse view synthesis using gaussian
+  splatting,'' {\em arXiv preprint arXiv:2312.00206}  (2024).
+\newblock DOI: https://doi.org/10.1109/3dv66043.2025.00100.
+
+\bibitem{Fang26_DropAnSH}
+Fang, S., Shen, I.-C., Zhang, X., Wang, Z., Wang, Y., Ding, W., Yu, G., and
+  Igarashi, T., ``Dropping anchor and spherical harmonics for sparse-view
+  {Gaussian} splatting,'' in [{\em Proc.\ IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+  33312--33322 (2026).
+\newblock DOI: https://doi.org/10.1109/lsp.2026.3707490.
+
+\bibitem{Wang24_DUSt3R}
+Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B., and Revaud, J., ``{DUSt3R}:
+  Geometric {3D} vision made easy,'' in [{\em Proc.\ IEEE/CVF Conference on
+  Computer Vision and Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},
+    20697--20709 (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.01956.
+
+\bibitem{Fan24_InstantSplat}
+Fan, Z., Cong, W., Wen, K., Wang, K., Zhang, J., Ding, X., Xu, D., Ivanovic,
+  B., Pavone, M., Pavlakos, G., Wang, Z., and Wang, Y., ``{InstantSplat}:
+  Unbounded sparse-view pose-free {Gaussian} splatting in 40 seconds.'' arXiv
+  preprint arXiv:2403.20309 (2024).
+\newblock DOI: https://doi.org/10.1109/iccv51701.2025.02360.
+
+\bibitem{Leroy24_MASt3R}
+Leroy, V., Cabon, Y., and Revaud, J., ``Grounding image matching in {3D} with
+  {MASt3R}.'' arXiv preprint arXiv:2406.09756 (2024).
+\newblock DOI: https://doi.org/10.1007/978-3-031-73220-1\_5.
+
+\bibitem{Charatan24_pixelSplat}
+Charatan, D., Li, S.~L., Tagliasacchi, A., and Sitzmann, V., ``{pixelSplat}:
+  {3D} {Gaussian} splats from image pairs for scalable generalizable {3D}
+  reconstruction,'' in [{\em Proc.\ IEEE/CVF Conference on Computer Vision and
+  Pattern Recognition (CVPR)}{\nolinebreak\hspace{0.1em}]},   19457--19467
+  (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52733.2024.01840.
+
+\bibitem{Chen24_MVSplat}
+Chen, Y., Xu, H., Zheng, C., Zhuang, B., Pollefeys, M., Geiger, A., Cham,
+  T.-J., and Cai, J., ``{MVSplat}: Efficient {3D} {Gaussian} splatting from
+  sparse multi-view images,'' in [{\em Proc.\ European Conference on Computer
+  Vision (ECCV)}{\nolinebreak\hspace{0.1em}]},   370--381 (2024).
+\newblock DOI: https://doi.org/10.1007/978-3-031-72664-4\_21.
+
+\bibitem{Cao24_MVSFormerPP}
+Cao, C., Ren, X., and Fu, Y., ``{MVSFormer++}: Revealing the devil in
+  transformer's details for multi-view stereo.'' arXiv preprint
+  arXiv:2401.11673 (2024).
+\newblock Available: https://arxiv.org/abs/2401.11673.
+
+\bibitem{Yang24_DepthAnythingV2}
+Yang, L., Kang, B., Huang, Z., Zhao, Z., Xu, X., Feng, J., and Zhao, H.,
+  ``Depth anything {V2},'' in [{\em Advances in Neural Information Processing
+  Systems (NeurIPS)}{\nolinebreak\hspace{0.1em}]},   {\bf 37},  21875--21911
+  (2024).
+\newblock DOI: https://doi.org/10.52202/079017-0688.
+
+\bibitem{Bochkovskii24_DepthPro}
+Bochkovskii, A., Delaunoy, A., Germain, H., Santos, M., Zhou, Y., Richter,
+  S.~R., and Koltun, V., ``Depth pro: Sharp monocular metric depth in less than
+  a second.'' arXiv preprint arXiv:2410.02073 (2024).
+\newblock Available: https://arxiv.org/abs/2410.02073.
+
+\bibitem{Wang24_MoGe}
+Wang, R., Xu, S., Dai, C., Xiang, J., Deng, Y., Tong, X., and Yang, J.,
+  ``{MoGe}: Unlocking accurate monocular geometry estimation for open-domain
+  images with optimal training supervision.'' arXiv preprint arXiv:2410.19115
+  (2024).
+\newblock DOI: https://doi.org/10.1109/cvpr52734.2025.00496.
+
+\bibitem{Wang25_VGGT}
+Wang, J., Chen, M., Karaev, N., Vedaldi, A., Rupprecht, C., and Novotny, D.,
+  ``{VGGT}: Visual geometry grounded transformer,'' in [{\em Proc.\ IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   5294--5306 (2025).
+\newblock DOI: https://doi.org/10.1109/cvpr52734.2025.00499.
+
+\bibitem{Li24_GSOctree}
+Li, J., Wen, Z., Zhang, L., Hu, J., Hou, F., Zhang, Z., and He, Y.,
+  ``{GS-Octree}: Octree-based {3D} {Gaussian} splatting for robust object-level
+  {3D} reconstruction under strong lighting.'' arXiv preprint arXiv:2406.18199
+  (2024).
+\newblock DOI: https://doi.org/10.1111/cgf.15206.
+
+\bibitem{Laurentini94_VisualHull}
+Laurentini, A., ``The visual hull concept for silhouette-based image
+  understanding,'' {\em IEEE Transactions on Pattern Analysis and Machine
+  Intelligence}~{\bf 16}(2),  150--162 (1994).
+\newblock DOI: https://doi.org/10.1109/34.273735.
+
+\bibitem{Lysykh25_VisualHull}
+Lysykh, A.~I., Zhdanov, D.~D., and Sorokin, M.~I., ``Method of geometry
+  reconstruction from a set of {RGB} images using differentiable rendering and
+  visual hull,'' {\em Programming and Computer Software}~{\bf 51}(3),  150--159
+  (2025).
+\newblock DOI: https://doi.org/10.1134/s0361768825700033.
+
+\bibitem{Balta18_SOR}
+Balta, H., Velagic, J., Bosschaerts, W., Cubber, G.~D., and Siciliano, B.,
+  ``Fast statistical outlier removal based method for large {3D} point clouds
+  of outdoor environments,'' {\em IFAC-PapersOnLine}~{\bf 51}(22),  348--353
+  (2018).
+\newblock DOI: https://doi.org/10.1016/j.ifacol.2018.11.566.
+
+\bibitem{Yu24_GOF}
+Yu, Z., Sattler, T., and Geiger, A., ``Gaussian opacity fields: Efficient
+  adaptive surface reconstruction in unbounded scenes.'' arXiv preprint
+  arXiv:2404.10772 (2024).
+\newblock DOI: https://doi.org/10.1145/3687937.
+
+\bibitem{Zhang24_RaDeGS}
+Zhang, B., Fang, C., Shrestha, R., Liang, Y., Long, X., and Tan, P.,
+  ``{RaDe-GS}: Rasterizing depth in {Gaussian} splatting.'' arXiv preprint
+  arXiv:2406.01467 (2024).
+\newblock DOI: https://doi.org/10.1145/3789201.
+
+\bibitem{Sabour24_SpotlessSplats}
+Sabour, S., Goli, L., Kopanas, G., Matthews, M., Lagun, D., Guibas, L.,
+  Jacobson, A., Fleet, D.~J., and Tagliasacchi, A., ``{SpotlessSplats}:
+  Ignoring distractors in {3D} {Gaussian} splatting.'' arXiv preprint
+  arXiv:2406.20055 (2024).
+\newblock DOI: https://doi.org/10.1145/3727143.
+
+\bibitem{Kheradmand24_3DGSMCMC}
+Kheradmand, S., Rebain, D., Sharma, G., Sun, W., Tseng, J., Isack, H., Kar, A.,
+  Tagliasacchi, A., and Yi, K.~M., ``{3D} {Gaussian} splatting as markov chain
+  monte carlo.'' arXiv preprint arXiv:2404.09591 (2024).
+\newblock DOI: https://doi.org/10.52202/079017-2573.
+
+\bibitem{Fang24_MiniSplatting}
+Fang, G. and Wang, B., ``Mini-splatting: Representing scenes with a constrained
+  number of gaussians.'' arXiv preprint arXiv:2403.14166 (2024).
+\newblock DOI: https://doi.org/10.1007/978-3-031-72980-5\_10.
+
+\bibitem{Song26_D2GS}
+Song, M., Lin, X., Zhang, D., Li, H., Li, X., Du, B., and Qi, L.,
+  ``{D\textsuperscript{2}GS}: Depth-and-density guided gaussian splatting for
+  stable and accurate sparse-view reconstruction,'' in [{\em Proc.\
+  International Conference on Learning Representations
+  (ICLR)}{\nolinebreak\hspace{0.1em}]},  (2026).
+\newblock Also arXiv:2510.08566. Available: https://arxiv.org/abs/2510.08566.
+
+\bibitem{Barron22_MipNeRF360}
+Barron, J.~T., Mildenhall, B., Verbin, D., Srinivasan, P.~P., and Hedman, P.,
+  ``{Mip-NeRF} 360: Unbounded anti-aliased neural radiance fields,'' in [{\em
+  Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   5460--5469 (2022).
+\newblock DOI: https://doi.org/10.1109/cvpr52688.2022.00539.
+
+\bibitem{Mildenhall19_LLFF}
+Mildenhall, B., Srinivasan, P.~P., Ortiz-Cayon, R., Kalantari, N.~K.,
+  Ramamoorthi, R., Ng, R., and Kar, A., ``Local light field fusion: Practical
+  view synthesis with prescriptive sampling guidelines,'' {\em ACM Transactions
+  on Graphics}~{\bf 38}(4),  29:1--29:14 (2019).
+\newblock DOI: https://doi.org/10.1145/3355089.3356577.
+
+\bibitem{Wang04_SSIM}
+Wang, Z., Bovik, A.~C., Sheikh, H.~R., and Simoncelli, E.~P., ``Image quality
+  assessment: From error visibility to structural similarity,'' {\em IEEE
+  Transactions on Image Processing}~{\bf 13}(4),  600--612 (2004).
+\newblock DOI: https://doi.org/10.1109/tip.2003.819861.
+
+\bibitem{Zhang18_LPIPS}
+Zhang, R., Isola, P., Efros, A.~A., Shechtman, E., and Wang, O., ``The
+  unreasonable effectiveness of deep features as a perceptual metric,'' in
+  [{\em Proc.\ IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  (CVPR)}{\nolinebreak\hspace{0.1em}]},   586--595 (2018).
+\newblock DOI: https://doi.org/10.1109/cvpr.2018.00068.
+
+\end{thebibliography}

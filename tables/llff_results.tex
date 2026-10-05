@@ -1,0 +1,53 @@
+% Table 2 — data from latex/FFLL数据集/formatting-instructions-latex.tex (unchanged numbers)
+\begin{table}[ht!]
+\centering
+\caption{\label{tab:llff} Performance comparisons of sparse-view synthesis on the LLFF 360 dataset (4/6/9 views). LPIPS$^{*}$ denotes LPIPS $\times 10^{2}$.}
+\setlength{\tabcolsep}{2.8mm}
+\renewcommand{\arraystretch}{1}
+\adjustbox{width=1\linewidth}{%
+\begin{tabular}{c c | ccc | ccc | ccc}
+\toprule
+\multirow{2}{*}{}
+  & \multirow{2}{*}{\centering Methods}
+  & \multicolumn{3}{c|}{LLFF 360 (4-view)}
+  & \multicolumn{3}{c|}{LLFF 360 (6-view)}
+  & \multicolumn{3}{c}{LLFF 360 (9-view)} \\
+&
+  & LPIPS$^{*}$$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$
+  & LPIPS$^{*}$$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$
+  & LPIPS$^{*}$$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$ \\
+\toprule
+\multirow{4}{*}{\rotatebox{90}{\scriptsize NeRF-based}}
+  & RegNeRF
+      & 29.65 & 18.55 & 0.587
+      & 22.61 & 19.08 & 0.760
+      & 18.39 & 22.86 & 0.820 \\
+  & FreeNeRF
+      & 30.85 & 19.09 & 0.624
+      & 23.06 & 19.81 & 0.763
+      & 17.94 & 23.08 & 0.823 \\
+\multirow{8}{*}{\rotatebox{90}{\scriptsize 3DGS-based}}
+  & 3DGS
+      &22.93 & 19.32 & 0.649
+      &13.45 & 23.80 & 0.814
+      &9.68 & 25.44 & 0.860 \\
+  & CoR-GS
+      &19.66 & 20.45 & 0.696
+      &\cellcolor{color_blue}12.53 & 23.87 & 0.840
+      &\cellcolor{color_blue}8.94 & 26.70 &\cellcolor{color_blue}0.874 \\
+  & DropGaussian
+      &21.93 & 19.80 & 0.621
+      &13.79 & 23.41 & 0.803
+      &9.40 & 25.87 & 0.868 \\
+  & D$^2$GS
+      &\cellcolor{blue!8}17.98 &\cellcolor{blue!8}22.35 &\cellcolor{blue!8}0.746
+      &13.85 &\cellcolor{blue!8}23.91 &\cellcolor{blue!8}0.846
+      &8.91 &\cellcolor{color_blue}26.80 &\cellcolor{blue!8}0.871 \\
+  & SynGS(Ours)
+      &\cellcolor{color_blue}16.92 &\cellcolor{color_blue}23.92 &\cellcolor{color_blue}0.762
+      &\cellcolor{blue!8}12.54 &\cellcolor{color_blue}25.17 &\cellcolor{color_blue}0.848
+      &\cellcolor{blue!8}8.96 &\cellcolor{blue!8}26.71 &\cellcolor{blue!8}0.871 \\
+\toprule
+\end{tabular}%
+}
+\end{table}

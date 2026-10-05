@@ -1,0 +1,20 @@
+% Table 3 — data from latex/消融实验/formatting-instructions-latex.tex (unchanged numbers)
+\begin{table}[ht]
+\centering
+\caption{\label{tab:ablation} Ablation study of SynGS components. LPIPS$^{*}$ denotes LPIPS $\times 10^{2}$.}
+\setlength{\tabcolsep}{2.5mm}
+\renewcommand{\arraystretch}{1.05}
+\small
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+\scriptsize Visual Hull Init & \scriptsize Depth Densification & \scriptsize Visibility Balancing$^{*}$ & SSIM$\uparrow$ & PSNR$\uparrow$ & LPIPS$^{*}$$\downarrow$ \\
+\midrule
+$\surd$  &              &              & 0.865  & 17.51  & 1.128  \\
+$\surd$  & $\surd$      &              & 0.902  & 24.96  & 0.879  \\
+$\surd$  & $\surd$      & $\surd$      & \textbf{0.943} & \textbf{26.18} & \textbf{0.609} \\
+\bottomrule
+\end{tabular}
+
+\vspace{0.3em}
+{\footnotesize $^{*}$Visibility Balancing denotes Dynamic Visibility Regularization (DVR).}
+\end{table}

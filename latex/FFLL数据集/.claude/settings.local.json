@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import python_docx\")",
+      "Bash(pip3 install:*)",
+      "Bash(python3 gen_table.py)"
+    ]
+  }
+}

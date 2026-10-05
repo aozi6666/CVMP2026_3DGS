@@ -1,0 +1,98 @@
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage[submission]{aaai}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in} % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in} % DO NOT CHANGE THIS
+%
+% These are recommended to typeset algorithms but not required. See the subsubsection on algorithms. Remove them if you don't have algorithms in your paper.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{pifont} %182/183/184
+\usepackage{subcaption}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{amsfonts,amssymb} 
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{booktabs}
+%\usepackage{subfigure}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{color}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{soul}
+\usepackage{verbatim}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{amsfonts,amssymb} 
+\usepackage{microtype}
+%\usepackage{subfigure}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{color}
+\usepackage[dvipsnames, table]{xcolor}
+\usepackage{soul}
+\usepackage{colortbl}
+\usepackage{booktabs,makecell, multirow, tabularx}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{amsmath}
+
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+\usepackage{utfsym}
+\usepackage{fontawesome}
+
+\usepackage{mdframed}
+\begin{document}
+
+% %%%%%%%%%%%%%%%%%%%颜色定义
+\definecolor{color_gray}{RGB}{229,229,229}
+\definecolor{color_blue}{RGB}{252,182,165}
+\definecolor{color_pink}{RGB}{255,217,178}
+\definecolor{color_yellow}{RGB}{255,255,204}
+\definecolor{color_blue1}{RGB}{135, 206, 235}
+\cellcolor{color_blue} \cellcolor{color_pink} \cellcolor{color_yellow} \cellcolor{blue!8}
+% %%%%%%%%%%%%%%%%%%%
+
+\begin{table*}[t!]
+\centering
+% 标题名称
+
+\label{tab:ablation}
+
+\setlength{\tabcolsep}{2.5mm}
+\renewcommand{\arraystretch}{1.05}
+
+\small
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+% 模块名称
+\scriptsize Visual Hull Init & \scriptsize Depth Densification & \scriptsize Visibility Balancing & SSIM$\uparrow$ & PSNR$\uparrow$ & LPIPS$\downarrow$ \\
+\midrule
+$\surd$  &              &              & 0.865  & 17.51  & 1.128  \\
+$\surd$  & $\surd$      &              & 0.902  & 24.96  & 0.879  \\
+$\surd$  & $\surd$      & $\surd$      & \textbf{0.943} & \textbf{26.18} & \textbf{0.609} \\
+\bottomrule
+
+\end{tabular}
+
+\end{table*}
+
+\end{document}

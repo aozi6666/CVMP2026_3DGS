@@ -1,0 +1,18 @@
+% Related Work — SPIE: section titles ALL CAPS; citations via \cite{}
+\section{RELATED WORK}
+\label{sec:related}
+
+\subsection{Sparse-View NeRF Reconstruction}
+\label{sec:related_nerf}
+
+Neural Radiance Fields (NeRF) represent scenes as implicit radiance fields and achieve high-quality novel view synthesis through differentiable rendering~\cite{Mildenhall21_NeRF}. Under sparse views, however, insufficient observations cause severe geometric ambiguity. Early few-shot NeRF methods introduce semantic or information-theoretic regularization~\cite{Jain21_DietNeRF,Kim22_InfoNeRF}. Depth-guided approaches further improve structural consistency~\cite{Wang23_SparseNeRF,Deng22_DSNeRF}, while other methods constrain unobserved regions~\cite{Niemeyer22_RegNeRF}, jointly refine noisy poses~\cite{Truong23_SPARF}, or leverage diffusion priors~\cite{Wu24_ReconFusion}. Grid-based anti-aliased variants such as Zip-NeRF further improve efficiency and rendering fidelity~\cite{Barron23_ZipNeRF}, and baked neural surfaces enable real-time mesh-based view synthesis~\cite{Yariv23_BakedSDF}.
+
+\subsection{Sparse-View 3D Gaussian Splatting}
+\label{sec:related_3dgs}
+
+3D Gaussian Splatting (3DGS) introduces an explicit scene representation based on optimizable Gaussian primitives and enables efficient training and real-time rendering through differentiable rasterization~\cite{Kerbl23_3DGS}. Beyond the original formulation, structured and anti-aliased Gaussian representations improve robustness and multi-scale rendering~\cite{Lu24_ScaffoldGS,Yu24_MipSplatting}, while surface-aligned variants target more accurate geometry recovery~\cite{Guedon24_SuGaR,Huang24_2DGS}. Depth-based approaches add geometric supervision~\cite{Li24_DNGaussian}, densification-based methods improve Gaussian coverage~\cite{Zhu24_FSGS,Bao25_LoopSparseGS}, including progressive geometric propagation~\cite{Cheng24_GaussianPro}, gradient-aware density control~\cite{Zhou26_GDAGS}, and epipolar depth priors~\cite{Zheng25_NexusGS}. Others explore alternating densification under sparse inputs~\cite{Patle25_ADGS}, score distillation~\cite{Xiong24_SparseGS}, co-regularization~\cite{Zhang24_CoRGS}, and Gaussian dropout~\cite{Park25_DropGaussian,Fang26_DropAnSH}. Complementary lines study pose-free geometric initialization with dense stereo priors~\cite{Wang24_DUSt3R,Fan24_InstantSplat}, matching grounded in 3D~\cite{Leroy24_MASt3R}, or feed-forward sparse reconstruction~\cite{Charatan24_pixelSplat,Chen24_MVSplat}.
+
+\subsection{Geometry and Depth Priors for Sparse Reconstruction}
+\label{sec:related_priors}
+
+Classical multi-view stereo remains a strong geometric backbone~\cite{Cao24_MVSFormerPP}. Monocular depth estimators provide useful cues for underconstrained views~\cite{Yang24_DepthAnythingV2,Bochkovskii24_DepthPro}, and recent monocular geometry models further recover metric structure from a single image~\cite{Wang24_MoGe}. SynGS instead adapts a VGGT-based multi-view depth prior~\cite{Wang25_VGGT} together with explicit visual-hull initialization and dynamic visibility regularization for more stable sparse-view 3DGS reconstruction.

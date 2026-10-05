@@ -1,0 +1,11 @@
+\section{INTRODUCTION}
+\label{sec:intro}
+
+Sparse inputs provide limited information about visible regions, causing 3D reconstruction methods to overfit local observations and struggle to maintain global geometric consistency~\cite{Yang23_FreeNeRF}. Sparse observations also introduce greater geometric ambiguity, making occluded regions, textureless areas, and view boundaries prone to missing geometry, structural distortions, and degraded appearance~\cite{Niemeyer22_RegNeRF}. Kerbl et al.~\cite{Kerbl23_3DGS} introduced 3D Gaussian Splatting (3DGS); with tiled rasterization it enables rapid training and real-time rendering~\cite{Kerbl23_3DGS}, and subsequent variants improve structured, alias-free rendering~\cite{Lu24_ScaffoldGS,Yu24_MipSplatting}. Under sparse views, Structure-from-Motion (SfM)~\cite{Schonberger16_COLMAP} often recovers incomplete point clouds. Since 3DGS relies on SfM cameras and sparse points for initialization, weak coverage harms geometric convergence~\cite{Chung24_DepthRegGS}. Limited cross-view constraints further cause floaters and pseudo-geometry~\cite{Xu25_DropoutGS}, while sparse supervision~\cite{Park25_DropGaussian} and visibility imbalance aggravate overfitting~\cite{Somraj23_ViPNeRF}.
+
+Existing sparse-view methods explore depth regularization~\cite{Li24_DNGaussian} and densification~\cite{Zhu24_FSGS}, or co-regularization and Gaussian dropout~\cite{Zhang24_CoRGS,Park25_DropGaussian}, but still struggle with fine structures and geometric consistency. We present SynGS, which strengthens Gaussian initialization with explicit geometric constraints and depth-guided densification, and applies Dynamic Visibility Regularization to reduce overfitting. The main contributions are:
+\begin{itemize}
+\item \textbf{Visual Hull Initialization.} We construct a visual hull from multi-view silhouettes as a stable geometric prior for Gaussian initialization.
+\item \textbf{VGGT / Depth-Guided Densification.} We back-project cross-view consistent depth predictions to supplement missing geometry for Gaussian initialization.
+\item \textbf{Dynamic Visibility Regularization.} We randomly mask Gaussian primitives during training to rebalance gradients and alleviate sparse-view overfitting.
+\end{itemize}

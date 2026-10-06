@@ -160,7 +160,7 @@ Bao, Z., Liao, G., Zhou, K., Liu, K., Li, Q., and Qiu, G., ``{LoopSparseGS}:
 Cheng, K., Long, X., Yang, K., Yao, Y., Yin, W., Ma, Y., Wang, W., and Chen,
   X., ``{GaussianPro}: {3D} {Gaussian} splatting with progressive
   propagation.'' arXiv preprint arXiv:2402.14650 (2024).
-\newblock Available: https://arxiv.org/abs/2402.14650.
+\newblock DOI: https://doi.org/10.48550/arXiv.2402.14650.
 
 \bibitem{Zhou26_GDAGS}
 Zhou, Z., Xiong, Y.-J., Zhang, J.-C., Xia, C.-M., Qiu, X., and Zhan, H.,
@@ -205,9 +205,9 @@ Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B., and Revaud, J., ``{DUSt3R}:
 \bibitem{Fan24_InstantSplat}
 Fan, Z., Cong, W., Wen, K., Wang, K., Zhang, J., Ding, X., Xu, D., Ivanovic,
   B., Pavone, M., Pavlakos, G., Wang, Z., and Wang, Y., ``{InstantSplat}:
-  Unbounded sparse-view pose-free {Gaussian} splatting in 40 seconds.'' arXiv
-  preprint arXiv:2403.20309 (2024).
-\newblock DOI: https://doi.org/10.1109/iccv51701.2025.02360.
+  Sparse-view {Gaussian} splatting in seconds.'' arXiv preprint
+  arXiv:2403.20309 (2024).
+\newblock DOI: https://doi.org/10.48550/arXiv.2403.20309.
 
 \bibitem{Charatan24_pixelSplat}
 Charatan, D., Li, S.~L., Tagliasacchi, A., and Sitzmann, V., ``{pixelSplat}:
@@ -228,7 +228,7 @@ Chen, Y., Xu, H., Zheng, C., Zhuang, B., Pollefeys, M., Geiger, A., Cham,
 Cao, C., Ren, X., and Fu, Y., ``{MVSFormer++}: Revealing the devil in
   transformer's details for multi-view stereo.'' arXiv preprint
   arXiv:2401.11673 (2024).
-\newblock Available: https://arxiv.org/abs/2401.11673.
+\newblock DOI: https://doi.org/10.48550/arXiv.2401.11673.
 
 \bibitem{Yang24_DepthAnythingV2}
 Yang, L., Kang, B., Huang, Z., Zhao, Z., Xu, X., Feng, J., and Zhao, H.,
@@ -307,6 +307,6 @@ Mildenhall, B., Srinivasan, P.~P., Ortiz-Cayon, R., Kalantari, N.~K.,
   Ramamoorthi, R., Ng, R., and Kar, A., ``Local light field fusion: Practical
   view synthesis with prescriptive sampling guidelines,'' {\em ACM Transactions
   on Graphics}~{\bf 38}(4),  29:1--29:14 (2019).
-\newblock DOI: https://doi.org/10.1145/3355089.3356577.
+\newblock DOI: https://doi.org/10.1145/3306346.3322980.
 
 \end{thebibliography}

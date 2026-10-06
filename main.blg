@@ -5,7 +5,7 @@ The style file: spiebib.bst
 Database file #1: references.bib
 You've used 46 entries,
             1993 wiz_defined-function locations,
-            803 strings with 16197 characters,
+            803 strings with 16177 characters,
 and the built_in function-call counts, 16013 in all, are:
 = -- 1496
 > -- 862

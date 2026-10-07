@@ -13,6 +13,35 @@ Figure~\ref{fig:qualitative} shows the 4-view comparison on Mip-NeRF 360. SynGS 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/qualitative.png}
+\setlength{\tabcolsep}{1.2pt}
+\renewcommand{\arraystretch}{0.2}
+\scriptsize
+\begin{tabular}{@{}cccccccc@{}}
+RegNeRF & SparseNeRF & 3DGS & CoR-GS & DropGaussian & D$^2$GS & Ours & GT \\
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_regnerf} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_sparsenerf} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_3dgs} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_corgs} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_dropgaussian} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_d2gs} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_ours} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s1_gt} \\[1pt]
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_regnerf} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_sparsenerf} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_3dgs} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_corgs} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_dropgaussian} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_d2gs} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_ours} &
+\includegraphics[width=0.118\textwidth]{figures/qualitative/s2_gt} \\[1pt]
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_regnerf}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_sparsenerf}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_3dgs}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_corgs}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_dropgaussian}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_d2gs}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_ours}} &
+\makebox[0.118\textwidth]{\includegraphics[height=0.127\textwidth]{figures/qualitative/s3_gt}}
+\end{tabular}
 \caption{\label{fig:qualitative} Qualitative comparison under the 4-view sparse-input setting on Mip-NeRF 360. SynGS produces fewer floating artifacts and more complete structural boundaries than the compared methods.}
 \end{figure}

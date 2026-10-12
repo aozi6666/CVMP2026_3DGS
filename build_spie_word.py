@@ -787,7 +787,7 @@ def polish(docx_path: Path) -> None:
         10,
     )
     add("*J.G.: E-mail: gjj@cuc.edu.cn", "SPIE body text", WD_ALIGN_PARAGRAPH.CENTER, 10)
-    add("B.Z.: E-mail: 2795750379@qq.com", "SPIE body text", WD_ALIGN_PARAGRAPH.CENTER, 10)
+    add("A.Z.: E-mail: 2212433186@qq.com", "SPIE body text", WD_ALIGN_PARAGRAPH.CENTER, 10)
 
     abs_md = MD.read_text(encoding="utf-8")
     abs_body = abs_md.split("# ABSTRACT")[1].split("# INTRODUCTION")[0].strip()

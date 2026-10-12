@@ -19,5 +19,8 @@ pdflatex -interaction=nonstopmode main.tex
 
 mkdir -p output
 cp -f main.pdf main.log main.aux main.bbl main.blg main.out output/
+NAME="SynGS_synergizing_explicit_geometry_and_transformer_depth_priors_for_sparse-view_3D_Gaussian_Splatting"
+cp -f main.pdf "output/${NAME}.pdf"
 
 echo "DONE. PDF -> $ROOT/output/main.pdf"
+echo "DONE. PDF -> $ROOT/output/${NAME}.pdf"

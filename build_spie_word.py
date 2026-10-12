@@ -750,7 +750,7 @@ def polish(docx_path: Path) -> None:
         return p
 
     add(
-        "SynGS: synergizing explicit geometry and transformer depth priors for sparse-view 3D Gaussian Splatting",
+        "SynGS: Synergizing explicit geometry and transformer depth priors for sparse-view 3D Gaussian Splatting",
         "SPIE paper title",
         WD_ALIGN_PARAGRAPH.CENTER,
         16,
@@ -762,6 +762,8 @@ def polish(docx_path: Path) -> None:
             ("Junjie Geng*", False),
             ("a", True),
             (", Ao Zhang", False),
+            ("a", True),
+            (", Bo Zhang", False),
             ("a", True),
             (", and Lian Duan", False),
             ("a", True),
@@ -784,7 +786,8 @@ def polish(docx_path: Path) -> None:
         WD_ALIGN_PARAGRAPH.CENTER,
         10,
     )
-    add("*gjj@cuc.edu.cn", "SPIE body text", WD_ALIGN_PARAGRAPH.CENTER, 10)
+    add("*J.G.: E-mail: gjj@cuc.edu.cn", "SPIE body text", WD_ALIGN_PARAGRAPH.CENTER, 10)
+    add("B.Z.: E-mail: 2795750379@qq.com", "SPIE body text", WD_ALIGN_PARAGRAPH.CENTER, 10)
 
     abs_md = MD.read_text(encoding="utf-8")
     abs_body = abs_md.split("# ABSTRACT")[1].split("# INTRODUCTION")[0].strip()
@@ -1006,7 +1009,7 @@ def verify(docx_path: Path) -> None:
     ref_blob = "\n".join(p.text for p in ref_paras)
 
     checks = {
-        "title": "SynGS: synergizing explicit geometry" in texts,
+        "title": "SynGS: Synergizing explicit geometry" in texts,
         "corr_email": "gjj@cuc.edu.cn" in texts,
         "keywords": "Keywords:" in texts and "Vision Transformer" in texts,
         # Template stores "Abstract"; style PrincipalHding applies w:caps so Word shows ABSTRACT

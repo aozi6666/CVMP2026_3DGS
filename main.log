@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.30)  7 OCT 2026 11:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.30)  12 OCT 2026 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,7 +430,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip60
 ) (./tables/table_style.tex)
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
-4.
+3.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -442,24 +442,24 @@ File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -485,7 +485,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 44.
+Package hyperref Info: Link coloring OFF on input line 43.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -493,36 +493,36 @@ Package hyperref Info: Link coloring OFF on input line 44.
 
 ptm-font_in_spiecls
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 46.
+ 45.
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 46.
+ 45.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 46.
+ 45.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 46.
+ 45.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 
 (./sections/01_introduction.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
@@ -543,7 +543,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 r/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/base/8r.enc}]) (./sections
 /03_method.tex
 (./sections/method/01_overall_framework.tex
-<figures/framework.pdf, id=122, 855.195pt x 478.78876pt>
+<figures/framework.pdf, id=121, 855.195pt x 478.78876pt>
 File: figures/framework.pdf Graphic file (type pdf)
 <use figures/framework.pdf>
 Package pdftex.def Info: figures/framework.pdf  used on input line 8.
@@ -551,7 +551,7 @@ Package pdftex.def Info: figures/framework.pdf  used on input line 8.
 )
 (./sections/method/02_visual_hull_init.tex [2 <./figures/framework.pdf>])
 (./sections/method/03_depth_guided_densification.tex
-<figures/vggt_depth.pdf, id=162, 854.19125pt x 484.81125pt>
+<figures/vggt_depth.pdf, id=161, 854.19125pt x 484.81125pt>
 File: figures/vggt_depth.pdf Graphic file (type pdf)
 <use figures/vggt_depth.pdf>
 Package pdftex.def Info: figures/vggt_depth.pdf  used on input line 8.
@@ -570,143 +570,143 @@ Overfull \vbox (7.32288pt too high) detected at line 20
  []
 
 ) [4]
-<figures/qualitative/s1_regnerf.png, id=236, 312.41719pt x 202.50656pt>
+<figures/qualitative/s1_regnerf.png, id=235, 312.41719pt x 202.50656pt>
 File: figures/qualitative/s1_regnerf.png Graphic file (type png)
 <use figures/qualitative/s1_regnerf.png>
 Package pdftex.def Info: figures/qualitative/s1_regnerf.png  used on input line
  21.
 (pdftex.def)             Requested size: 57.5612pt x 37.30861pt.
-<figures/qualitative/s1_sparsenerf.png, id=237, 312.41719pt x 202.50656pt>
+<figures/qualitative/s1_sparsenerf.png, id=236, 312.41719pt x 202.50656pt>
 File: figures/qualitative/s1_sparsenerf.png Graphic file (type png)
 <use figures/qualitative/s1_sparsenerf.png>
 Package pdftex.def Info: figures/qualitative/s1_sparsenerf.png  used on input l
 ine 22.
 (pdftex.def)             Requested size: 57.5612pt x 37.30861pt.
-<figures/qualitative/s1_3dgs.png, id=238, 311.66437pt x 202.50656pt>
+<figures/qualitative/s1_3dgs.png, id=237, 311.66437pt x 202.50656pt>
 File: figures/qualitative/s1_3dgs.png Graphic file (type png)
 <use figures/qualitative/s1_3dgs.png>
 Package pdftex.def Info: figures/qualitative/s1_3dgs.png  used on input line 23
 .
 (pdftex.def)             Requested size: 57.5612pt x 37.39822pt.
-<figures/qualitative/s1_corgs.png, id=239, 312.41719pt x 202.50656pt>
+<figures/qualitative/s1_corgs.png, id=238, 312.41719pt x 202.50656pt>
 File: figures/qualitative/s1_corgs.png Graphic file (type png)
 <use figures/qualitative/s1_corgs.png>
 Package pdftex.def Info: figures/qualitative/s1_corgs.png  used on input line 2
 4.
 (pdftex.def)             Requested size: 57.5612pt x 37.30861pt.
-<figures/qualitative/s1_dropgaussian.png, id=240, 312.41719pt x 202.50656pt>
+<figures/qualitative/s1_dropgaussian.png, id=239, 312.41719pt x 202.50656pt>
 File: figures/qualitative/s1_dropgaussian.png Graphic file (type png)
 <use figures/qualitative/s1_dropgaussian.png>
 Package pdftex.def Info: figures/qualitative/s1_dropgaussian.png  used on input
  line 25.
 (pdftex.def)             Requested size: 57.5612pt x 37.30861pt.
-<figures/qualitative/s1_d2gs.png, id=241, 296.60812pt x 201.00093pt>
+<figures/qualitative/s1_d2gs.png, id=240, 296.60812pt x 201.00093pt>
 File: figures/qualitative/s1_d2gs.png Graphic file (type png)
 <use figures/qualitative/s1_d2gs.png>
 Package pdftex.def Info: figures/qualitative/s1_d2gs.png  used on input line 26
 .
 (pdftex.def)             Requested size: 57.5612pt x 39.0064pt.
-<figures/qualitative/s1_ours.png, id=242, 312.41719pt x 202.50656pt>
+<figures/qualitative/s1_ours.png, id=241, 312.41719pt x 202.50656pt>
 File: figures/qualitative/s1_ours.png Graphic file (type png)
 <use figures/qualitative/s1_ours.png>
 Package pdftex.def Info: figures/qualitative/s1_ours.png  used on input line 27
 .
 (pdftex.def)             Requested size: 57.5612pt x 37.30861pt.
-<figures/qualitative/s1_gt.png, id=243, 312.41719pt x 202.50656pt>
+<figures/qualitative/s1_gt.png, id=242, 312.41719pt x 202.50656pt>
 File: figures/qualitative/s1_gt.png Graphic file (type png)
 <use figures/qualitative/s1_gt.png>
 Package pdftex.def Info: figures/qualitative/s1_gt.png  used on input line 28.
 (pdftex.def)             Requested size: 57.5612pt x 37.30861pt.
-<figures/qualitative/s2_regnerf.png, id=244, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_regnerf.png, id=243, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_regnerf.png Graphic file (type png)
 <use figures/qualitative/s2_regnerf.png>
 Package pdftex.def Info: figures/qualitative/s2_regnerf.png  used on input line
  29.
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s2_sparsenerf.png, id=245, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_sparsenerf.png, id=244, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_sparsenerf.png Graphic file (type png)
 <use figures/qualitative/s2_sparsenerf.png>
 Package pdftex.def Info: figures/qualitative/s2_sparsenerf.png  used on input l
 ine 30.
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s2_3dgs.png, id=246, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_3dgs.png, id=245, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_3dgs.png Graphic file (type png)
 <use figures/qualitative/s2_3dgs.png>
 Package pdftex.def Info: figures/qualitative/s2_3dgs.png  used on input line 31
 .
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s2_corgs.png, id=247, 247.67531pt x 249.18094pt>
+<figures/qualitative/s2_corgs.png, id=246, 247.67531pt x 249.18094pt>
 File: figures/qualitative/s2_corgs.png Graphic file (type png)
 <use figures/qualitative/s2_corgs.png>
 Package pdftex.def Info: figures/qualitative/s2_corgs.png  used on input line 3
 2.
 (pdftex.def)             Requested size: 57.5612pt x 57.91115pt.
-<figures/qualitative/s2_dropgaussian.png, id=248, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_dropgaussian.png, id=247, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_dropgaussian.png Graphic file (type png)
 <use figures/qualitative/s2_dropgaussian.png>
 Package pdftex.def Info: figures/qualitative/s2_dropgaussian.png  used on input
  line 33.
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s2_d2gs.png, id=249, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_d2gs.png, id=248, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_d2gs.png Graphic file (type png)
 <use figures/qualitative/s2_d2gs.png>
 Package pdftex.def Info: figures/qualitative/s2_d2gs.png  used on input line 34
 .
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s2_ours.png, id=250, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_ours.png, id=249, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_ours.png Graphic file (type png)
 <use figures/qualitative/s2_ours.png>
 Package pdftex.def Info: figures/qualitative/s2_ours.png  used on input line 35
 .
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s2_gt.png, id=251, 239.39438pt x 257.46187pt>
+<figures/qualitative/s2_gt.png, id=250, 239.39438pt x 257.46187pt>
 File: figures/qualitative/s2_gt.png Graphic file (type png)
 <use figures/qualitative/s2_gt.png>
 Package pdftex.def Info: figures/qualitative/s2_gt.png  used on input line 36.
 (pdftex.def)             Requested size: 57.5612pt x 61.90604pt.
-<figures/qualitative/s3_regnerf.png, id=252, 111.41624pt x 176.15813pt>
+<figures/qualitative/s3_regnerf.png, id=251, 111.41624pt x 176.15813pt>
 File: figures/qualitative/s3_regnerf.png Graphic file (type png)
 <use figures/qualitative/s3_regnerf.png>
 Package pdftex.def Info: figures/qualitative/s3_regnerf.png  used on input line
  37.
 (pdftex.def)             Requested size: 39.18327pt x 61.95291pt.
-<figures/qualitative/s3_sparsenerf.png, id=253, 111.41624pt x 176.15813pt>
+<figures/qualitative/s3_sparsenerf.png, id=252, 111.41624pt x 176.15813pt>
 File: figures/qualitative/s3_sparsenerf.png Graphic file (type png)
 <use figures/qualitative/s3_sparsenerf.png>
 Package pdftex.def Info: figures/qualitative/s3_sparsenerf.png  used on input l
 ine 38.
 (pdftex.def)             Requested size: 39.18327pt x 61.95291pt.
-<figures/qualitative/s3_3dgs.png, id=254, 111.41624pt x 176.15813pt>
+<figures/qualitative/s3_3dgs.png, id=253, 111.41624pt x 176.15813pt>
 File: figures/qualitative/s3_3dgs.png Graphic file (type png)
 <use figures/qualitative/s3_3dgs.png>
 Package pdftex.def Info: figures/qualitative/s3_3dgs.png  used on input line 39
 .
 (pdftex.def)             Requested size: 39.18327pt x 61.95291pt.
-<figures/qualitative/s3_corgs.png, id=255, 111.41624pt x 176.15813pt>
+<figures/qualitative/s3_corgs.png, id=254, 111.41624pt x 176.15813pt>
 File: figures/qualitative/s3_corgs.png Graphic file (type png)
 <use figures/qualitative/s3_corgs.png>
 Package pdftex.def Info: figures/qualitative/s3_corgs.png  used on input line 4
 0.
 (pdftex.def)             Requested size: 39.18327pt x 61.95291pt.
-<figures/qualitative/s3_dropgaussian.png, id=256, 148.555pt x 234.8775pt>
+<figures/qualitative/s3_dropgaussian.png, id=255, 148.555pt x 234.8775pt>
 File: figures/qualitative/s3_dropgaussian.png Graphic file (type png)
 <use figures/qualitative/s3_dropgaussian.png>
 Package pdftex.def Info: figures/qualitative/s3_dropgaussian.png  used on input
  line 41.
 (pdftex.def)             Requested size: 39.18327pt x 61.95291pt.
-<figures/qualitative/s3_d2gs.png, id=257, 111.41624pt x 174.6525pt>
+<figures/qualitative/s3_d2gs.png, id=256, 111.41624pt x 174.6525pt>
 File: figures/qualitative/s3_d2gs.png Graphic file (type png)
 <use figures/qualitative/s3_d2gs.png>
 Package pdftex.def Info: figures/qualitative/s3_d2gs.png  used on input line 42
 .
 (pdftex.def)             Requested size: 39.52159pt x 61.95291pt.
-<figures/qualitative/s3_ours.png, id=258, 111.41624pt x 176.15813pt>
+<figures/qualitative/s3_ours.png, id=257, 111.41624pt x 176.15813pt>
 File: figures/qualitative/s3_ours.png Graphic file (type png)
 <use figures/qualitative/s3_ours.png>
 Package pdftex.def Info: figures/qualitative/s3_ours.png  used on input line 43
 .
 (pdftex.def)             Requested size: 39.18327pt x 61.95291pt.
-<figures/qualitative/s3_gt.png, id=259, 111.41624pt x 176.15813pt>
+<figures/qualitative/s3_gt.png, id=258, 111.41624pt x 176.15813pt>
 File: figures/qualitative/s3_gt.png Graphic file (type png)
 <use figures/qualitative/s3_gt.png>
 Package pdftex.def Info: figures/qualitative/s3_gt.png  used on input line 44.
@@ -755,10 +755,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: C37BBBF38751B4FD6E1C18B7CE5279BB;1824.
  ) 
 Here is how much of TeX's memory you used:
- 12628 strings out of 468531
- 204822 string characters out of 5442128
- 657996 words of memory out of 5000000
- 41452 multiletter control sequences out of 15000+600000
+ 12629 strings out of 468531
+ 204833 string characters out of 5442128
+ 657926 words of memory out of 5000000
+ 41453 multiletter control sequences out of 15000+600000
  675245 words of font info for 142 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  74i,13n,83p,1301b,554s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -772,10 +772,10 @@ syr.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/symbol/usyr.pf
 b></usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (8 pages, 4551355 bytes).
+Output written on main.pdf (8 pages, 4551262 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 285 compressed objects within 3 object streams
+ 349 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
  79 named destinations out of 1000 (max. 500000)
  227 words of extra memory for PDF output out of 10000 (max. 10000000)
 

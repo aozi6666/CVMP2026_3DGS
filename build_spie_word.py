@@ -17,10 +17,17 @@ ROOT = Path(__file__).resolve().parent
 TEMPLATE = ROOT / "Template" / "文件2：ProcSPIETemplate_A4.docx"
 OUT = ROOT / "SynGS_SPIE_A4.docx"
 OUT_COPY = ROOT / "output" / "SynGS_SPIE_A4.docx"
+OUT_CLEAN = ROOT / "output" / "SynGS_revised_clean.docx"
+OUT_HIGHLIGHTED = ROOT / "output" / "SynGS_revised_highlighted.docx"
 FIG = ROOT / "figures" / "word_export"
 BBL = ROOT / "main.bbl"
 WORKDIR = ROOT / "word_build"
 MD = WORKDIR / "paper.md"
+
+REV_OPEN = "⟦REV⟧"
+REV_CLOSE = "⟦/REV⟧"
+# Module flag set by build_one(); strip_tex reads it when expanding \rev{...}.
+HIGHLIGHT_REV = False
 
 MARKER_T1 = "[[[TABLE_MIP360]]]"
 MARKER_T2 = "[[[TABLE_LLFF]]]"
@@ -140,7 +147,42 @@ def cite_to_sup(text: str, cmap: dict[str, int]) -> str:
     return re.sub(r"\\cite\{([^}]+)\}", repl, text)
 
 
-def strip_tex(text: str, cmap: dict[str, int]) -> str:
+def _extract_brace_group(text: str, open_idx: int) -> tuple[str, int]:
+    """open_idx points at '{'; return (inner, index_after_closing_brace)."""
+    if open_idx >= len(text) or text[open_idx] != "{":
+        raise ValueError("expected '{'")
+    depth = 0
+    i = open_idx
+    while i < len(text):
+        ch = text[i]
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return text[open_idx + 1 : i], i + 1
+        i += 1
+    raise ValueError("unbalanced braces in \\rev{...}")
+
+
+def protect_rev(text: str) -> tuple[str, list[str]]:
+    """Replace \\rev{...} with @@REVn@@ placeholders; return (text, bodies)."""
+    slots: list[str] = []
+    out: list[str] = []
+    i = 0
+    while i < len(text):
+        if text.startswith(r"\rev{", i):
+            body, nxt = _extract_brace_group(text, i + 4)
+            slots.append(body)
+            out.append(f"@@REV{len(slots) - 1}@@")
+            i = nxt
+        else:
+            out.append(text[i])
+            i += 1
+    return "".join(out), slots
+
+
+def strip_tex_core(text: str, cmap: dict[str, int], strip_ends: bool = True) -> str:
     def figref(m):
         return REFMAP.get(m.group(1), m.group(1))
 
@@ -169,8 +211,91 @@ def strip_tex(text: str, cmap: dict[str, int]) -> str:
     text = text.replace(r"\&", "&").replace(r"\%", "%").replace(r"\,", " ")
     text = re.sub(r"\\[a-zA-Z]+\*?(?:\[[^\]]*\])?(?:\{([^{}]*)\})?", lambda m: m.group(1) if m.lastindex else "", text)
     text = text.replace("{", "").replace("}", "")
-    text = re.sub(r"\s+", " ", text).strip()
+    lead = bool(re.match(r"^\s", text))
+    trail = bool(re.search(r"\s$", text))
+    text = re.sub(r"\s+", " ", text.strip())
+    if not strip_ends:
+        if lead:
+            text = " " + text
+        if trail:
+            text = text + " "
     return restore_math(text, slots)
+
+
+def strip_tex(text: str, cmap: dict[str, int]) -> str:
+    text, rev_slots = protect_rev(text)
+    text = strip_tex_core(text, cmap)
+    for i, body in enumerate(rev_slots):
+        # Preserve edge spaces so mid-phrase \rev{...} does not glue to neighbors.
+        stripped = strip_tex_core(body, cmap, strip_ends=False)
+        if HIGHLIGHT_REV:
+            replacement = f"{REV_OPEN}{stripped}{REV_CLOSE}"
+        else:
+            replacement = stripped
+        text = text.replace(f"@@REV{i}@@", replacement)
+    # Safety net for split Table~\ref export glitches
+    text = re.sub(r"Table\s*Table\s*(\d+)", r"Table \1", text)
+    text = re.sub(r"(Table\s+\d+)(?=[A-Za-z])", r"\1 ", text)
+    text = re.sub(r"\s+", " ", text).strip() if not (REV_OPEN in text) else text
+    if REV_OPEN in text:
+        # Collapse only runs of spaces outside markers carefully
+        text = re.sub(r"[ \t]{2,}", " ", text)
+    return text
+
+
+def set_run_highlight(run, fill: str = "FFFF00") -> None:
+    rPr = run._element.get_or_add_rPr()
+    for old in rPr.findall(qn("w:shd")):
+        rPr.remove(old)
+    shd = OxmlElement("w:shd")
+    shd.set(qn("w:val"), "clear")
+    shd.set(qn("w:color"), "auto")
+    shd.set(qn("w:fill"), fill)
+    rPr.append(shd)
+
+
+def clear_paragraph_runs(paragraph) -> None:
+    for run in list(paragraph.runs):
+        run._element.getparent().remove(run._element)
+
+
+def fill_paragraph_with_rev_markers(paragraph, text: str, size: int = 10) -> None:
+    """Rebuild runs from text containing REV_OPEN/REV_CLOSE; yellow-shade marked spans."""
+    clear_paragraph_runs(paragraph)
+    parts = re.split(f"({re.escape(REV_OPEN)}|{re.escape(REV_CLOSE)})", text)
+    in_rev = False
+    for part in parts:
+        if part == REV_OPEN:
+            in_rev = True
+            continue
+        if part == REV_CLOSE:
+            in_rev = False
+            continue
+        if not part:
+            continue
+        # Keep markdown bold markers as plain text; pandoc already expanded most body.
+        run = paragraph.add_run(part.replace("**", ""))
+        set_run_font(run, "Times New Roman", size=size)
+        if in_rev:
+            set_run_highlight(run)
+
+
+def apply_rev_highlights(doc: Document) -> int:
+    """Convert ⟦REV⟧...⟦/REV⟧ markers into yellow run shading. Returns count of touched paras."""
+    n = 0
+    for p in doc.paragraphs:
+        t = p.text
+        if REV_OPEN not in t:
+            continue
+        st = p.style.name if p.style else ""
+        size = 10
+        if st == "SPIE abstract body text":
+            size = 10
+        elif st == "SPIE figure caption" or st == "SPIE table caption":
+            size = 9
+        fill_paragraph_with_rev_markers(p, t, size=size)
+        n += 1
+    return n
 
 
 def read_tex(path: Path) -> str:
@@ -415,6 +540,40 @@ def set_table_borders(table) -> None:
     jc = OxmlElement("w:jc")
     jc.set(qn("w:val"), "center")
     tblPr.append(jc)
+
+
+def discourage_table_row_split(table) -> None:
+    """Prefer keeping rows intact across page breaks (Word may still split a tall table)."""
+    tbl = table._tbl
+    if is_eq_number_table(tbl):
+        return
+    for tr in tbl.findall(qn("w:tr")):
+        trPr = tr.find(qn("w:trPr"))
+        if trPr is None:
+            trPr = OxmlElement("w:trPr")
+            tr.insert(0, trPr)
+        if trPr.find(qn("w:cantSplit")) is None:
+            trPr.append(OxmlElement("w:cantSplit"))
+
+
+def insert_page_break_before_table_caption(doc: Document, caption_prefix: str) -> None:
+    """Insert a page break before the first paragraph whose text starts with caption_prefix."""
+    for p in doc.paragraphs:
+        if p.text.strip().startswith(caption_prefix):
+            # Avoid double-insert if already broken
+            pPr = p._p.pPr
+            if pPr is not None and pPr.find(qn("w:pageBreakBefore")) is not None:
+                return
+            if pPr is None:
+                pPr = OxmlElement("w:pPr")
+                p._p.insert(0, pPr)
+            pbb = OxmlElement("w:pageBreakBefore")
+            pPr.insert(0, pbb)
+            # Also keep caption with following table when possible
+            if pPr.find(qn("w:keepNext")) is None:
+                pPr.append(OxmlElement("w:keepNext"))
+            print(f"page-break-before: {caption_prefix!r}")
+            return
 
 
 MATH_NS = "{http://schemas.openxmlformats.org/officeDocument/2006/math}"
@@ -926,8 +1085,12 @@ def polish(docx_path: Path) -> None:
 
         st = p.style.name if p.style else ""
         if st in ("SPIE body text", "SPIE abstract body text"):
-            if not (t.startswith("*") and "@" in t):
+            # Keep author emails centered (A.Z. does not start with '*')
+            is_email = "E-mail:" in t and "@" in t
+            if not is_email and not (t.startswith("*") and "@" in t):
                 p.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+            elif is_email:
+                p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             for run in p.runs:
                 set_run_font(run, "Times New Roman", size=10)
         else:
@@ -950,6 +1113,14 @@ def polish(docx_path: Path) -> None:
 
     for tbl in doc.tables:
         set_table_borders(tbl)
+        discourage_table_row_split(tbl)
+
+    # Keep Table 2 (LLFF) from starting mid-page under Table 1: page-break before its caption.
+    insert_page_break_before_table_caption(doc, "Table 2.")
+
+    if HIGHLIGHT_REV:
+        n_rev = apply_rev_highlights(doc)
+        print(f"yellow-highlighted revision paragraphs: {n_rev}")
 
     superscript_citations(doc)
     doc.save(str(docx_path))
@@ -1057,27 +1228,64 @@ def verify(docx_path: Path) -> None:
         raise SystemExit(1)
 
 
-def main():
+def build_one(mode: str) -> Path:
+    """mode: 'clean' | 'highlighted'. Returns output docx path."""
+    global HIGHLIGHT_REV
+    HIGHLIGHT_REV = mode == "highlighted"
+
     WORKDIR.mkdir(exist_ok=True)
     OUT_COPY.parent.mkdir(exist_ok=True)
     cmap = load_cite_map()
     refs = load_refs()
-    print(f"cites={len(cmap)} refs={len(refs)}")
+    print(f"[{mode}] cites={len(cmap)} refs={len(refs)} highlight={HIGHLIGHT_REV}")
     md = build_markdown(cmap, refs)
+    md_path = WORKDIR / f"paper_{mode}.md"
+    md_path.write_text(md, encoding="utf-8")
+    # polish() reads MD for abstract; keep alias in sync
     MD.write_text(md, encoding="utf-8")
-    print("wrote", MD, "chars", len(md))
+    print("wrote", md_path, "chars", len(md))
     if "r_ is the maximum" in md or "(d)= d+" in md:
         raise SystemExit("math stripping still broken")
     if "# 1. INTRODUCTION" in md or re.search(r"^\[1\] ", md, re.M):
         raise SystemExit("manual numbering still present in markdown")
-    tmp = WORKDIR / "pandoc_out.docx"
-    run_pandoc(MD, tmp)
-    shutil.copy2(tmp, OUT)
-    polish(OUT)
-    verify(OUT)
-    shutil.copy2(OUT, OUT_COPY)
-    print("DONE", OUT)
-    print("COPY", OUT_COPY)
+    if HIGHLIGHT_REV and REV_OPEN not in md:
+        raise SystemExit("highlight mode but no \\rev markers found in markdown")
+    if (not HIGHLIGHT_REV) and REV_OPEN in md:
+        raise SystemExit("clean mode still contains revision markers")
+
+    tmp = WORKDIR / f"pandoc_out_{mode}.docx"
+    run_pandoc(md_path, tmp)
+    out_root = ROOT / f"SynGS_SPIE_A4_{mode}.docx"
+    shutil.copy2(tmp, out_root)
+    polish(out_root)
+    verify(out_root)
+
+    if mode == "clean":
+        dest = OUT_CLEAN
+        shutil.copy2(out_root, OUT)
+        shutil.copy2(out_root, OUT_COPY)
+    else:
+        dest = OUT_HIGHLIGHTED
+    shutil.copy2(out_root, dest)
+    print("DONE", out_root)
+    print("COPY", dest)
+    return dest
+
+
+def main():
+    import argparse
+
+    ap = argparse.ArgumentParser(description="Build SPIE A4 Word (clean / highlighted / both).")
+    ap.add_argument(
+        "--mode",
+        choices=["clean", "highlighted", "both"],
+        default="both",
+        help="clean=no yellow; highlighted=yellow \\rev spans; both=default",
+    )
+    args = ap.parse_args()
+    modes = ["clean", "highlighted"] if args.mode == "both" else [args.mode]
+    for m in modes:
+        build_one(m)
 
 
 if __name__ == "__main__":

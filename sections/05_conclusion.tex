@@ -1,4 +1,5 @@
 \section{CONCLUSION}
 \label{sec:conclusion}
 
-We present SynGS for sparse-view 3DGS, combining \textbf{Visual Hull Initialization}, \textbf{VGGT-Guided Densification}, and \textbf{Dynamic Visibility Regularization} for more reliable initialization, geometry completion, and reduced sparse-view overfitting. On Mip-NeRF 360 and LLFF, SynGS improves novel-view quality under sparse inputs; densification adds memory and compute cost, and more efficient densification without losing quality is left for future work.
+We present SynGS for sparse-view 3DGS, combining \textbf{Visual Hull Initialization}, \textbf{VGGT-Guided Densification}, and \textbf{Dynamic Visibility Regularization} for more reliable initialization, geometry completion, and reduced sparse-view overfitting.
+\rev{SynGS demonstrates more pronounced improvements under highly sparse-view conditions, particularly in PSNR and SSIM with four or six input views. With nine input views, SynGS maintains improvements in PSNR and SSIM on Mip-NeRF 360, while achieving performance comparable to leading methods on LLFF. However, the additional geometry introduced during initialization incurs memory and computational overhead. Future work will focus on developing more efficient geometry augmentation strategies to reduce these costs while preserving reconstruction quality.}

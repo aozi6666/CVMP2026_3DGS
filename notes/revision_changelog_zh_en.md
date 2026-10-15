@@ -29,10 +29,10 @@ On the Mip-NeRF 360 dataset, SynGS achieves gains of up to 3.56 dB in PSNR and 0
 在 Mip-NeRF 360 数据集上，SynGS 在稀疏视角设置下最高可取得约 3.56 dB 的 PSNR 提升以及 0.025 的 SSIM 提升。
 
 **修改后：**  
-On Mip-NeRF 360, SynGS demonstrates consistent improvements in PSNR and SSIM across the evaluated sparse-view settings, with gains of 3.56 dB in PSNR and 0.025 in SSIM over a leading baseline using only four input views. On LLFF, the improvements are more pronounced in the four- and six-view settings, while the nine-view results remain comparable to those of leading existing methods.
+On Mip-NeRF 360, SynGS achieves higher PSNR and SSIM than the compared methods across the evaluated sparse-view settings, reaching 25.91 dB in PSNR and 0.948 in SSIM using only four input views, while D²GS obtains lower LPIPS values. On LLFF, the improvements are more apparent in the four- and six-view settings, while the nine-view results remain comparable to those of other evaluated methods.
 
 **中文：**  
-在 Mip-NeRF 360 上，SynGS 在所评估的稀疏视角设置中均在 PSNR 与 SSIM 上取得一致提升，其中在仅 4 视角输入时相对某一领先基线的增益为 PSNR +3.56 dB、SSIM +0.025。在 LLFF 上，提升在 4 与 6 视角设置更为明显，而 9 视角结果与现有领先方法保持可比。
+在 Mip-NeRF 360 上，SynGS 在所评估的稀疏视角设置中 PSNR 与 SSIM 均高于对照方法，在仅 4 视角输入时达到 PSNR 25.91 dB、SSIM 0.948，而 D²GS 的 LPIPS 更低。在 LLFF 上，提升在 4 与 6 视角设置更为明显，而 9 视角结果与其他对照方法保持可比。
 
 ---
 
@@ -155,15 +155,15 @@ Table 1 reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view setting
 表 1 报告了 Mip-NeRF 360 在 4/6/9 视角设置下的结果。SynGS 在三个设置下均取得最高的 PSNR 与 SSIM，其中 4 视角时 PSNR 优势最大：25.91 dB，比 D²GS 高 3.56 dB。就 LPIPS 而言，D²GS 在三个设置下均为更低（更好）。表 2 呈现类似趋势：4 视角时 SynGS 在 PSNR、SSIM、LPIPS 上均最优；6 视角时 PSNR 与 SSIM 最高，LPIPS 接近最优；9 视角时 D²GS 的 PSNR 略高、LPIPS 更低，CoR-GS 的 SSIM 略高。最明显的优势出现在 4 与 6 视角设置。
 
 **修改后：**  
-Table 1 reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. SynGS achieves the highest PSNR and SSIM in all three settings, with the largest PSNR gain in the 4-view case: 25.91 dB, 3.56 dB above D²GS. However, D²GS obtains lower LPIPS values across the three settings, indicating an advantage in perceptual similarity. Table 2 shows a similar trend. With four views, SynGS leads in PSNR, SSIM, and LPIPS; under six views it obtains the highest PSNR and SSIM with LPIPS close to the best result. As the number of input views increases to nine, the differences among the leading methods become smaller: D²GS gives slightly higher PSNR and lower LPIPS, while CoR-GS achieves slightly higher SSIM. Overall, SynGS shows more pronounced improvements in the four- and six-view settings, suggesting that the proposed framework is particularly beneficial when the geometric information available from the input views is severely limited.
+Table 1 reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. SynGS obtains higher PSNR and SSIM than the compared methods in all three settings, with a more noticeable PSNR difference in the 4-view case: 25.91 dB, compared with 22.35 dB for D²GS. However, D²GS obtains lower LPIPS values across the three settings, indicating an advantage in perceptual similarity. Table 2 shows a similar trend. With four views, SynGS achieves favorable results in PSNR, SSIM, and LPIPS; under six views, it obtains higher PSNR and SSIM than the compared methods, with LPIPS close to the lowest reported value. As the number of input views increases to nine, the differences among the compared 3DGS-based methods become smaller: D²GS gives slightly higher PSNR and lower LPIPS, while CoR-GS achieves slightly higher SSIM. Overall, SynGS shows more pronounced improvements in the four- and six-view settings, suggesting that the proposed framework may be particularly beneficial when the geometric information available from the input views is severely limited.
 
 **中文：**  
-表 1 报告 Mip-NeRF 360 在 4/6/9 视角下的结果。SynGS 在三个设置下均取得最高 PSNR 与 SSIM，其中 4 视角时 PSNR 增益最大：25.91 dB，比 D²GS 高 3.56 dB。然而，D²GS 在三个设置下 LPIPS 更低，在感知相似性上占优。表 2 趋势类似。4 视角时 SynGS 在 PSNR、SSIM、LPIPS 上领先；6 视角时取得最高 PSNR 与 SSIM，LPIPS 接近最优。当输入增至 9 视角时，领先方法之间差距变小：D²GS 的 PSNR 略高、LPIPS 更低，CoR-GS 的 SSIM 略高。总体而言，SynGS 在 4 与 6 视角设置下提升更为明显，表明当输入视角提供的几何信息严重受限时，所提框架尤为有益。
+表 1 报告 Mip-NeRF 360 在 4/6/9 视角下的结果。SynGS 在三个设置下的 PSNR 与 SSIM 均高于对照方法，其中 4 视角时 PSNR 差异更明显：25.91 dB，对照 D²GS 为 22.35 dB。然而，D²GS 在三个设置下 LPIPS 更低，在感知相似性上占优。表 2 趋势类似。4 视角时 SynGS 在 PSNR、SSIM、LPIPS 上表现良好；6 视角时 PSNR 与 SSIM 高于对照方法，LPIPS 接近报告的最低值。当输入增至 9 视角时，对照的 3DGS 方法之间差距变小：D²GS 的 PSNR 略高、LPIPS 更低，CoR-GS 的 SSIM 略高。总体而言，SynGS 在 4 与 6 视角设置下提升更为明显，表明当输入视角提供的几何信息严重受限时，所提框架可能尤为有益。
 
 **相对原文的取舍：**  
-- 删除：sparsity-dependent / claims stated … 两句 meta  
-- 保留：Table 1/2 报告骨架、PSNR/SSIM 数字、LPIPS 与 9-view 分项事实  
-- 调整：advantage→gain；LLFF 4-view best→leads；However+感知相似性；9-view “差距变小”；收束改为 more pronounced improvements …
+- 删除：sparsity-dependent / claims stated … 两句 meta；去掉 highest / leads / 3.56 dB above  
+- 保留：Table 1/2 报告骨架、PSNR/SSIM 绝对值、LPIPS 与 9-view 分项事实  
+- 调整：改为 compared with 22.35 dB；favorable / higher than compared；may be particularly beneficial
 
 ---
 
@@ -181,10 +181,10 @@ On Mip-NeRF 360 and LLFF, SynGS improves novel-view quality under sparse inputs;
 在 Mip-NeRF 360 与 LLFF 上，SynGS 提升了稀疏输入下的新视角合成质量；稠密化会增加显存与计算开销，如何在不损失质量的前提下更高效地稠密化留待未来工作。
 
 **修改后：**  
-SynGS demonstrates more pronounced improvements under highly sparse-view conditions, particularly in PSNR and SSIM with four or six input views. With nine input views, SynGS maintains improvements in PSNR and SSIM on Mip-NeRF 360, while achieving performance comparable to leading methods on LLFF. However, the additional geometry introduced during initialization incurs memory and computational overhead. Future work will focus on developing more efficient geometry augmentation strategies to reduce these costs while preserving reconstruction quality.
+SynGS shows more pronounced improvements under highly sparse-view conditions, particularly in PSNR and SSIM with four or six input views. With nine input views, SynGS maintains higher PSNR and SSIM than the compared methods on Mip-NeRF 360, while the LLFF results remain comparable to those of other evaluated methods. However, the additional geometry introduced during initialization incurs memory and computational overhead. Future work will focus on developing more efficient geometry augmentation strategies to reduce these costs while preserving reconstruction quality.
 
 **中文：**  
-SynGS 在高度稀疏视角条件下提升更为明显，尤其在 4 或 6 输入视角下的 PSNR 与 SSIM。在 9 输入视角时，SynGS 在 Mip-NeRF 360 上仍保持 PSNR 与 SSIM 的提升，而在 LLFF 上与领先方法性能相当。然而，初始化阶段引入的额外几何会带来显存与计算开销。未来工作将聚焦更高效的几何增强策略，以在保持重建质量的同时降低这些成本。
+SynGS 在高度稀疏视角条件下提升更为明显，尤其在 4 或 6 输入视角下的 PSNR 与 SSIM。在 9 输入视角时，SynGS 在 Mip-NeRF 360 上仍保持相对对照方法更高的 PSNR 与 SSIM，而 LLFF 结果与其他对照方法保持可比。然而，初始化阶段引入的额外几何会带来显存与计算开销。未来工作将聚焦更高效的几何增强策略，以在保持重建质量的同时降低这些成本。
 
 ---
 

@@ -1,7 +1,7 @@
 \subsection{Dynamic Visibility Regularization}
 \label{sec:dvr}
 
-Sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussians appear in fewer views or pixels and receive weaker reconstruction gradients~\cite{Xu25_DropoutGS,Park25_DropGaussian}. Visibility priors have also been explored to regularize sparse-input radiance fields~\cite{Somraj23_ViPNeRF}, and distractor-aware training further highlights sensitivity to unreliable observations~\cite{Sabour24_SpotlessSplats}. Beyond fixed densification heuristics, densification can also be cast as stochastic sampling~\cite{Kheradmand24_3DGSMCMC}, while constraining the Gaussian budget motivates careful control of which primitives participate in rendering~\cite{Fang24_MiniSplatting}. We use DVR via progressive Gaussian dropout.
+Sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussians appear in fewer views or pixels and receive weaker reconstruction gradients~\cite{Xu25_DropoutGS,Park25_DropGaussian}. Visibility priors have also been explored to regularize sparse-input radiance fields~\cite{Somraj23_ViPNeRF}. We use DVR via progressive Gaussian dropout.
 
 At iteration $t$, DVR randomly masks a subset of Gaussians for dropout rendering. The dropout ratio grows linearly:
 \begin{equation}

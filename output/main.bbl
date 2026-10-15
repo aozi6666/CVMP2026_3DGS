@@ -124,19 +124,6 @@ Wu, R., Mildenhall, B., Henzler, P., Park, K., Gao, R., Watson, D., Srinivasan,
   (CVPR)}{\nolinebreak\hspace{0.1em}]},   21551--21561 (2024).
 \newblock DOI: https://doi.org/10.1109/cvpr52733.2024.02036.
 
-\bibitem{Barron23_ZipNeRF}
-Barron, J.~T., Mildenhall, B., Verbin, D., Srinivasan, P.~P., and Hedman, P.,
-  ``{Zip-NeRF}: Anti-aliased grid-based neural radiance fields,'' in [{\em
-  Proc.\ IEEE/CVF International Conference on Computer Vision
-  (ICCV)}{\nolinebreak\hspace{0.1em}]},   19697--19705 (2023).
-\newblock DOI: https://doi.org/10.1109/iccv51070.2023.01804.
-
-\bibitem{Yariv23_BakedSDF}
-Yariv, L., Hedman, P., Reiser, C., Verbin, D., Srinivasan, P.~P., Szeliski, R.,
-  Barron, J.~T., and Mildenhall, B., ``{BakedSDF}: Meshing neural {SDFs} for
-  real-time view synthesis.'' arXiv preprint arXiv:2302.14859 (2023).
-\newblock DOI: https://doi.org/10.1145/3588432.3591536.
-
 \bibitem{Guedon24_SuGaR}
 Gu{\'e}don, A. and Lepetit, V., ``{SuGaR}: Surface-aligned {Gaussian} splatting
   for efficient {3D} mesh reconstruction and high-quality mesh rendering,'' in
@@ -269,24 +256,6 @@ Zhang, B., Fang, C., Shrestha, R., Liang, Y., Long, X., and Tan, P.,
   ``{RaDe-GS}: Rasterizing depth in {Gaussian} splatting.'' arXiv preprint
   arXiv:2406.01467 (2024).
 \newblock DOI: https://doi.org/10.1145/3789201.
-
-\bibitem{Sabour24_SpotlessSplats}
-Sabour, S., Goli, L., Kopanas, G., Matthews, M., Lagun, D., Guibas, L.,
-  Jacobson, A., Fleet, D.~J., and Tagliasacchi, A., ``{SpotlessSplats}:
-  Ignoring distractors in {3D} {Gaussian} splatting.'' arXiv preprint
-  arXiv:2406.20055 (2024).
-\newblock DOI: https://doi.org/10.1145/3727143.
-
-\bibitem{Kheradmand24_3DGSMCMC}
-Kheradmand, S., Rebain, D., Sharma, G., Sun, W., Tseng, J., Isack, H., Kar, A.,
-  Tagliasacchi, A., and Yi, K.~M., ``{3D} {Gaussian} splatting as markov chain
-  monte carlo.'' arXiv preprint arXiv:2404.09591 (2024).
-\newblock DOI: https://doi.org/10.52202/079017-2573.
-
-\bibitem{Fang24_MiniSplatting}
-Fang, G. and Wang, B., ``Mini-splatting: Representing scenes with a constrained
-  number of gaussians.'' arXiv preprint arXiv:2403.14166 (2024).
-\newblock DOI: https://doi.org/10.1007/978-3-031-72980-5\_10.
 
 \bibitem{Song26_D2GS}
 Song, M., Lin, X., Zhang, D., Li, H., Li, X., Du, B., and Qi, L.,

@@ -1,8 +1,10 @@
 \subsection{Ablation Study}
 \label{sec:ablation}
 
-Table~\ref{tab:ablation} isolates the contributions of the three components. Unlike Table~\ref{tab:mip360}, which reports dataset-wide averages, the ablation is a separate protocol and is not the 4-view mean in Table~\ref{tab:mip360}.
+Table~\ref{tab:ablation} \rev{presents an ablation analysis examining the contributions of the three components.} Unlike Table~\ref{tab:mip360}, which reports dataset-wide averages, the ablation is a separate protocol and is not the 4-view mean in Table~\ref{tab:mip360}.
 
 \input{tables/ablation}
 
 Visual Hull Initialization establishes the geometric baseline at 17.51~dB PSNR. Adding Depth Densification raises PSNR to 24.96~dB, the largest gain in the ablation. Adding DVR further improves the full configuration to 26.18~dB, with gains in SSIM and LPIPS.
+
+\rev{The three configurations also clarify how the components contribute at different stages. The first configuration provides a reference for reconstruction using silhouette-derived geometry. The second incorporates additional depth-supported points before optimization, allowing the effect of geometric supplementation to be assessed against this reference. The third retains the enhanced initialization and introduces regularization during training. This sequence distinguishes the contribution of additional geometric information from that of the optimization strategy. Importantly, the ablation follows a separate evaluation protocol from the dataset-wide comparison in Table}~\ref{tab:mip360}\rev{. Its results should therefore be interpreted as comparisons between configurations within the ablation protocol, rather than as alternative estimates of the averages reported in Table}~\ref{tab:mip360}\rev{.}

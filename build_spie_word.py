@@ -1198,7 +1198,7 @@ def verify(docx_path: Path) -> None:
         "merged_header_mip": "Mip-NeRF 360 (4-view)" in table_text,
         "merged_header_llff": "LLFF (4-view)" in table_text,
         "refs_doi": "DOI:" in texts,
-        "ref_style_count": len(ref_paras) >= 40,
+        "ref_style_count": len(ref_paras) >= 15,
         "no_manual_ref_prefix": manual_ref == 0,
         "no_latex_refs": not re.search(r'``|\\"|Leimk"u|Sch"o|Proc\.\\', ref_blob),
         "no_manual_h1_number": manual_h1 == 0,

@@ -7,18 +7,15 @@
 
 \textbf{Mip-NeRF 360 and LLFF.}
 Table~\ref{tab:mip360}
-\rev{reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. SynGS obtains higher PSNR and SSIM than the compared methods in all three settings, with a more noticeable PSNR difference in the 4-view case: 25.91~dB, compared with 22.35~dB for D\textsuperscript{2}GS}
-~\cite{Song26_D2GS}. \rev{However, D\textsuperscript{2}GS obtains lower LPIPS values across the three settings, indicating an advantage in perceptual similarity.}
+reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. \rev{On Mip-NeRF 360, SynGS achieves higher PSNR and SSIM values relative to the evaluated baseline methods under the 4-, 6-, and 9-view configurations,} with a more noticeable PSNR difference in the 4-view case: 25.91~dB, compared with 22.35~dB for D\textsuperscript{2}GS
+~\cite{Song26_D2GS}. However, D\textsuperscript{2}GS obtains lower LPIPS values across the three settings, indicating an advantage in perceptual similarity.
 Table~\ref{tab:llff}
-\rev{shows a similar trend. With four views, SynGS achieves favorable results in PSNR, SSIM, and LPIPS; under six views, it obtains higher PSNR and SSIM than the compared methods, with LPIPS close to the lowest reported value. As the number of input views increases to nine, the differences among the compared 3DGS-based methods become smaller: D\textsuperscript{2}GS}
-~\cite{Song26_D2GS}
-\rev{gives slightly higher PSNR and lower LPIPS, while CoR-GS}
-~\cite{Zhang24_CoRGS}
-\rev{achieves slightly higher SSIM. Overall, SynGS shows more pronounced improvements in the four- and six-view settings, suggesting that the proposed framework may be particularly beneficial when the geometric information available from the input views is severely limited.}
+shows a similar trend. With four views, SynGS achieves favorable results in PSNR, SSIM, and LPIPS; \rev{in the six-view LLFF setting, SynGS records higher PSNR and SSIM values than the baseline approaches included in the comparison,} with LPIPS close to the lowest reported value. \rev{In the nine-view LLFF configuration, the performance differences among the evaluated 3DGS-based approaches are relatively limited. Compared with SynGS, D\textsuperscript{2}GS}~\cite{Song26_D2GS} \rev{reports a slightly higher PSNR and a lower LPIPS, whereas CoR-GS}~\cite{Zhang24_CoRGS} \rev{achieves a marginally higher SSIM.} \rev{These results indicate a greater benefit from SynGS with four or six input views.}
 
 
 \textbf{Qualitative Results.}
 Figure~\ref{fig:qualitative} shows the 4-view comparison on Mip-NeRF 360. SynGS produces fewer floating artifacts and more complete object boundaries, and preserves finer structures where baselines show broken contours or missing details.
+\rev{The examples in Figure}~\ref{fig:qualitative} \rev{illustrate different aspects of the reconstruction results. In the first row, the comparison focuses on the outline and internal details of the mechanical object, where interruptions and detached regions are visible in some baseline outputs. The second row provides a more challenging arrangement of thin branches and irregular shapes, making local continuity easier to examine. The third row highlights differences in the preservation of narrow structures and the appearance of the reconstructed surface. Across these examples, the visual comparison supports the quantitative observations, while remaining limited to the scenes displayed in the figure. The figure alone does not establish whether similar differences would appear in other scenes.}
 
 \begin{figure}[!htbp]
 \centering

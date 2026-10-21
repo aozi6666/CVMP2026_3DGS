@@ -10,7 +10,7 @@ r_t=\min\left(r_{\max},\,\gamma\frac{t}{T}\right),
 \end{equation}
 where $t$ and $T$ are the current and total iterations, $r_{\max}$ is the maximum dropout ratio, and $\gamma=0.1$--$0.2$ controls the growth rate. Early training keeps weak dropout for geometric convergence; later training increases it against sparse-view overfitting.
 
-Used alone, random dropout can induce opacity or scale compensation; we keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives~\cite{Park25_DropGaussian}, the dropout branch is left uncompensated, while the full set is rendered in parallel under the same target. Let $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$ denote the full and dropout renderings, and $I$ the ground-truth image. We use the standard color loss
+Used alone, random dropout can induce opacity or scale compensation; we keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives~\cite{Park25_DropGaussian}, the dropout branch is left uncompensated, while the full set is rendered in parallel under the same target. \rev{Let $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$ represent the renderings obtained with and without Gaussian dropout, respectively, and let $I$ denote the ground-truth image. The color loss is defined as:}
 \begin{equation}
 \label{eq:color_loss}
 \mathcal{L}_{\mathrm{color}}(\hat{I},I)
@@ -28,4 +28,4 @@ with $\lambda=0.2$~\cite{Kerbl23_3DGS}. The final objective is
 +
 \beta\,\mathcal{L}_{\mathrm{color}}(I_{\mathrm{drop}},I),
 \end{equation}
-where $\beta=0.5$--$1.0$. Related sparse-view designs further modulate masking with depth and density cues~\cite{Song26_D2GS}, or drop anchors and spherical harmonics~\cite{Fang26_DropAnSH}; DVR instead uses a progressive random schedule with an uncompensated dropout branch.
+where $\beta=0.5$--$1.0$. Related sparse-view designs further modulate masking with depth and density cues~\cite{Song26_D2GS}; DVR instead uses a progressive random schedule with an uncompensated dropout branch.

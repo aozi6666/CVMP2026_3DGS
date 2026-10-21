@@ -2,33 +2,33 @@
 
 # ABSTRACT
 
-In 360-degree scenes captured with sparse views, 3D Gaussian Splatting (3DGS) reconstruction is susceptible to the loss of edge detail, geometric instability in occluded regions, and overfitting to foreground regions. To mitigate these challenges under sparse-view conditions, we present SynGS, a 3D Gaussian Splatting method guided by geometric and depth priors for sparse-view 3D reconstruction. The proposed method leverages the visual hull to impose explicit geometric constraints and integrates a Transformer-based depth prior to facilitate global cross-view consistency, complemented by a geometry enhancement pipeline. By combining reliable depth filtering with fine-grained structural detail recovery and incorporating a dynamic visibility regularization strategy, our approach enables adaptive reweighting of supervision signals during optimization. Empirical evaluations demonstrate that SynGS achieves competitive performance, particularly in PSNR and SSIM. On Mip-NeRF 360, SynGS achieves higher PSNR and SSIM than the compared methods across the evaluated sparse-view settings, reaching 25.91 dB in PSNR and 0.948 in SSIM using only four input views. On LLFF, the improvements are more apparent in the four- and six-view settings, while the nine-view results remain comparable to those of other evaluated methods.
+In 360-degree scenes captured with sparse views, 3D Gaussian Splatting (3DGS) reconstruction is susceptible to the loss of edge detail, geometric instability in occluded regions, and overfitting to foreground regions. To address the reconstruction difficulties arising from limited input observations, we introduce SynGS, which incorporates explicit geometric constraints and depth information into the 3D Gaussian Splatting framework. The proposed method leverages the visual hull to impose explicit geometric constraints and integrates a Transformer-based depth prior to facilitate global cross-view consistency, complemented by a geometry enhancement pipeline. By combining reliable depth filtering with fine-grained structural detail recovery and incorporating a dynamic visibility regularization strategy, our approach enables adaptive reweighting of supervision signals during optimization. The experimental findings indicate favorable PSNR and SSIM results for SynGS. In the Mip-NeRF 360 experiments, its PSNR and SSIM values exceed those reported for the selected baseline methods under the evaluated input-view configurations, reaching 25.91 dB in PSNR and 0.948 in SSIM using only four input views. On LLFF, the improvements are more apparent in the four- and six-view settings, while the nine-view results remain comparable to those of other evaluated methods.
 
 **Keywords:** Novel View Synthesis, 3D Gaussian Splatting, Few-shot reconstruction, Geometry Prior-Guided Reconstruction, Vision Transformer
 
 # INTRODUCTION
 
-Sparse inputs provide limited information about visible regions, causing 3D reconstruction methods to overfit local observations and struggle to maintain global geometric consistency <sup>[1]</sup>. Sparse observations also introduce greater geometric ambiguity, making occluded regions, textureless areas, and view boundaries prone to missing geometry, structural distortions, and degraded appearance <sup>[2]</sup>. Kerbl et al. <sup>[3]</sup> introduced 3D Gaussian Splatting (3DGS); with tiled rasterization it enables rapid training and real-time rendering, and subsequent variants improve structured, alias-free rendering <sup>[4,5]</sup>. Under sparse views, Structure-from-Motion (SfM) <sup>[6]</sup> often recovers incomplete point clouds. Since 3DGS relies on SfM cameras and sparse points for initialization, weak coverage harms geometric convergence <sup>[7]</sup>. Limited cross-view constraints further cause floaters and pseudo-geometry <sup>[8]</sup>, while sparse supervision <sup>[9]</sup> and visibility imbalance aggravate overfitting <sup>[10]</sup>.
+Sparse inputs provide limited information about visible regions, causing 3D reconstruction methods to overfit local observations and struggle to maintain global geometric consistency <sup>[1]</sup>. Sparse observations also introduce greater geometric ambiguity, making occluded regions, textureless areas, and view boundaries prone to missing geometry, structural distortions, and degraded appearance <sup>[2]</sup>. Kerbl et al. <sup>[3]</sup> proposed 3D Gaussian Splatting (3DGS), which achieves fast training and real-time rendering through a tile-based rasterization mechanism. Subsequent developments have further enhanced the representation through structured Gaussian organization <sup>[4]</sup>. Under sparse views, Structure-from-Motion (SfM) <sup>[5]</sup> often recovers incomplete point clouds. Since 3DGS relies on SfM cameras and sparse points for initialization, weak coverage harms geometric convergence <sup>[6]</sup>. Limited cross-view constraints further cause floaters and pseudo-geometry <sup>[7]</sup>, while sparse supervision <sup>[8]</sup> and visibility imbalance aggravate overfitting <sup>[9]</sup>.
 
-Existing sparse-view methods have explored depth regularization <sup>[11]</sup>, Gaussian densification <sup>[12]</sup>, co-regularization <sup>[13]</sup>, and Gaussian dropout <sup>[9]</sup> to improve reconstruction. Nevertheless, incomplete initial geometry and overfitting during optimization remain challenges when only a few observations are available. To address these issues, we propose SynGS, a sparse-view 3DGS framework that combines geometry-guided Gaussian initialization with training-time regularization. By strengthening initial geometric support and mitigating overfitting during optimization, SynGS improves reconstruction robustness under severely limited view coverage. The main contributions are:
+Existing sparse-view methods have explored depth regularization <sup>[10]</sup>, Gaussian densification <sup>[11]</sup>, co-regularization <sup>[12]</sup>, and Gaussian dropout <sup>[8]</sup> to improve reconstruction. Nevertheless, incomplete initial geometry and overfitting during optimization remain challenges when only a few observations are available. To mitigate these challenges, we develop SynGS within the sparse-view 3DGS setting, where geometry-guided Gaussian initialization is coupled with regularization during training. By strengthening initial geometric support and mitigating overfitting during optimization, SynGS improves reconstruction robustness under severely limited view coverage. The main contributions are:
 
 - **Visual Hull Initialization.** We incorporate a visual hull derived from multi-view silhouettes to provide an explicit geometric constraint for Gaussian initialization. This constraint complements incomplete SfM observations and helps establish a more reliable initial spatial distribution of Gaussian primitives.
 
 - **VGGT-Guided Densification.** We develop a pre-optimization densification strategy that back-projects cross-view-consistent depth estimates from VGGT to supplement the sparse initial point set. By introducing additional geometric samples before training, this strategy improves geometric coverage in under-observed regions.
 
-- **Dynamic Visibility Regularization.** We incorporate Dynamic Visibility Regularization during training to stochastically mask Gaussian primitives, redistribute optimization gradients, and mitigate overfitting under limited-view supervision. This regularization complements the geometry-enhanced initialization to improve the robustness of sparse-view reconstruction.
+- **Dynamic Visibility Regularization.** We incorporate Dynamic Visibility Regularization during training to stochastically mask Gaussian primitives, redistribute optimization gradients, and mitigate overfitting under limited-view supervision. Together with the geometry-enhanced initialization, this regularization contributes to more robust reconstruction when only a limited number of input views are available.
 
 # RELATED WORK
 
-Neural Radiance Fields (NeRF) represent scenes as implicit radiance fields and achieve high-quality novel view synthesis through differentiable rendering <sup>[14]</sup>. Under sparse views, however, insufficient observations cause severe geometric ambiguity. Depth-guided approaches further improve structural consistency <sup>[15,16]</sup>, while other methods constrain unobserved regions <sup>[2]</sup>, jointly refine noisy poses <sup>[17]</sup>, or leverage diffusion priors <sup>[18]</sup>. 3D Gaussian Splatting (3DGS) introduces an explicit scene representation based on optimizable Gaussian primitives and enables efficient training and real-time rendering through differentiable rasterization <sup>[3]</sup>. Beyond the original formulation, structured and anti-aliased Gaussian representations improve robustness and multi-scale rendering <sup>[4,5]</sup>, while surface-aligned variants target more accurate geometry recovery <sup>[19,20]</sup>. Depth-based approaches introduce additional geometric supervision <sup>[11]</sup>, while densification-based methods improve Gaussian coverage <sup>[12,21]</sup>. Other strategies include progressive geometric propagation <sup>[22]</sup>, gradient-aware density control <sup>[23]</sup>, and epipolar depth priors <sup>[24]</sup>. Others explore alternating densification under sparse inputs <sup>[25]</sup>, score distillation <sup>[26]</sup>, co-regularization <sup>[13]</sup>, and Gaussian dropout <sup>[9,27]</sup>. Pose-free and feed-forward sparse Gaussian reconstruction has also been studied <sup>[28,29,30,31]</sup>.
+In neural rendering, Neural Radiance Fields (NeRF) employ an implicit radiance field representation, allowing high-quality images of unseen viewpoints to be synthesized through differentiable rendering <sup>[13]</sup>. Under sparse views, however, insufficient observations cause severe geometric ambiguity. Depth-guided approaches further improve structural consistency <sup>[14]</sup>, while other methods constrain unobserved regions <sup>[2]</sup>. In contrast to implicit radiance field representations, 3D Gaussian Splatting (3DGS) models scenes explicitly using optimizable Gaussian primitives, with differentiable rasterization supporting efficient training and real-time rendering <sup>[3]</sup>. Beyond the original formulation, structured Gaussian representations improve robustness and view-adaptive rendering <sup>[4]</sup>. Depth-based approaches introduce additional geometric supervision <sup>[10]</sup>, while densification-based methods improve Gaussian coverage <sup>[11]</sup>. Other strategies include epipolar depth priors <sup>[15]</sup>. Others explore co-regularization <sup>[12]</sup> and Gaussian dropout <sup>[8]</sup>.
 
-Classical multi-view stereo remains a strong geometric backbone <sup>[32]</sup>. Monocular depth estimators provide useful cues for underconstrained views <sup>[33]</sup>, and recent monocular geometry models further recover metric structure from a single image <sup>[34]</sup>. Although depth supervision, Gaussian densification, and training-time regularization have improved sparse-view reconstruction, limited-view observations can still result in incomplete initial geometry and overfitting during optimization. To address these challenges, SynGS combines explicit visual-hull constraints with a VGGT-based multi-view depth prior <sup>[35]</sup> to augment the initial Gaussian geometry before optimization, and incorporates Dynamic Visibility Regularization during training to alleviate sparse-view overfitting.
+Monocular depth estimators provide useful cues for underconstrained views <sup>[16]</sup>. Although depth supervision, Gaussian densification, and training-time regularization have improved sparse-view reconstruction, limited-view observations can still result in incomplete initial geometry and overfitting during optimization. To address these challenges, SynGS combines explicit visual-hull constraints with a VGGT-based multi-view depth prior <sup>[17]</sup> to augment the initial Gaussian geometry before optimization, and incorporates Dynamic Visibility Regularization during training to alleviate sparse-view overfitting.
 
 # METHOD
 
 ## Overall Framework
 
-We propose SynGS, a sparse-view 3D Gaussian Splatting <sup>[3]</sup> framework that integrates explicit geometry initialization, depth-guided densification, and visibility-aware optimization. As illustrated in Figure 1, the input consists of sparse-view images and corresponding foreground masks. While recent variants organize Gaussians with structured scaffolds or octrees <sup>[4,36]</sup>, SynGS focuses on silhouette-based initialization and depth-guided densification under sparse posed inputs.
+SynGS is developed as a sparse-view 3D Gaussian Splatting <sup>[3]</sup> framework that combines explicit geometric initialization, depth-guided point cloud densification, and visibility-aware optimization. Figure 1 illustrates the overall pipeline, which takes sparsely captured images and their corresponding foreground masks as input. While recent variants organize Gaussians with structured scaffolds <sup>[4]</sup>, SynGS focuses on silhouette-based initialization and depth-guided densification under sparse posed inputs.
 
 First, **Visual Hull Initialization** constructs a coarse geometric prior from multi-view silhouettes and generates an initial point cloud. Then, **VGGT-Guided Densification** exploits cross-view depth priors to supplement missing geometry and produce a depth-enhanced point cloud for Gaussian initialization. Finally, **Dynamic Visibility Regularization (DVR)** is applied during 3DGS optimization to rebalance supervision under sparse visibility and reduce overfitting. The complete process proceeds from the Visual Hull point cloud, through depth densification and Gaussian initialization, to DVR-regularized optimization.
 
@@ -36,13 +36,13 @@ First, **Visual Hull Initialization** constructs a coarse geometric prior from m
 
 ## Visual Hull Initialization
 
-Under sparse views, Structure-from-Motion (SfM) <sup>[6]</sup> often produces sparse and incomplete point clouds. Weak coverage then destabilizes 3DGS optimization. We construct a Visual Hull prior from sparse multi-view images, camera parameters, and foreground masks, with light mask cleanup at boundaries. With known cameras, silhouettes are back-projected into 3D, and multi-view silhouette consistency defines a coarse geometric envelope of the target <sup>[37]</sup>.
+Under sparse views, Structure-from-Motion (SfM) <sup>[5]</sup> often produces sparse and incomplete point clouds. Weak coverage then destabilizes 3DGS optimization. We construct a Visual Hull prior from sparse multi-view images, camera parameters, and foreground masks, with light mask cleanup at boundaries. With known cameras, silhouettes are back-projected into 3D, and multi-view silhouette consistency defines a coarse geometric envelope of the target <sup>[18]</sup>.
 
 Candidate points are retained only when their projections agree with all valid foreground masks, then cleaned by one-time statistical and radius-based outlier filtering. The scaffold is stable but coarse: silhouette-based reconstruction cannot fully recover concave regions and fine structures. Sec. 3.3 supplements the missing geometry before Gaussian initialization.
 
 ## VGGT-Guided Densification
 
-Silhouettes alone miss concave regions and fine structures. We densify the Visual Hull point cloud with **VGGT-Depth**: from a pre-trained VGGT backbone <sup>[35]</sup>, a depth prior adaptation branch with cross-attention over multi-view tokens and a lightweight fusion head predicts per-view depth and confidence. Unlike a frozen monocular depth network <sup>[33]</sup>, the adaptation branch is conditioned on multi-view tokens (Figure 2).
+Silhouettes alone miss concave regions and fine structures. We densify the Visual Hull point cloud with **VGGT-Depth**: from a pre-trained VGGT backbone <sup>[17]</sup>, a depth prior adaptation branch with cross-attention over multi-view tokens and a lightweight fusion head predicts per-view depth and confidence. Unlike a frozen monocular depth network <sup>[16]</sup>, the adaptation branch is conditioned on multi-view tokens (Figure 2).
 
 ![Figure 2. VGGT-Depth prior used for depth-guided point cloud densification.](/Users/zhihu/Desktop/CUC/EI会议/CVMP2026_3DGS/figures/word_export/vggt_depth.png)
 
@@ -55,13 +55,13 @@ $$
 
 we reject low-confidence or inconsistent observations before back-projection.
 
-Point supplementation runs only along reliable rays. For each point, the top $K=3$ reliable views are selected; candidates are sampled around the predicted depth and back-projected. Related densification strategies propagate geometric cues or control Gaussian density during optimization <sup>[22,23]</sup>; alternating densification schedules have also been studied for sparse inputs <sup>[25]</sup>. Here supplementation is applied offline to the Visual Hull point cloud before training. Complementary work injects epipolar depth priors into sparse-view Gaussian reconstruction <sup>[24]</sup>, or rasterizes depth from Gaussians for geometric supervision <sup>[38]</sup>; we instead use adapted VGGT-Depth predictions for back-projection. Supplementary points are merged via two-stage voxel fusion and deduplication ($0.01L$ then $0.004L$).
+Point supplementation runs only along reliable rays. For each point, the top $K=3$ reliable views are selected; candidates are sampled around the predicted depth and back-projected. Here supplementation is applied offline to the Visual Hull point cloud before training. Complementary work injects epipolar depth priors into sparse-view Gaussian reconstruction <sup>[15]</sup>; we instead use adapted VGGT-Depth predictions for back-projection. Supplementary points are merged via two-stage voxel fusion and deduplication ($0.01L$ then $0.004L$).
 
-Each densified point initializes a Gaussian center; scale comes from the mean distance to its $k=8$ nearest neighbors. Multi-view colors are fused with depth-consistency and VGGT confidence weights. Opacity is set from cross-view consistency and clipped to $[0.2,0.8]$. Uneven supervision remains under sparse views; we address this with DVR (Sec. 3.4).
+The densified points are used to initialize Gaussian centers, with the scale of each Gaussian determined by the average distance to its $k=8$ nearest neighbors. Color information from multiple views is combined using weights derived from depth consistency and VGGT confidence. Opacity is set from cross-view consistency and clipped to $[0.2,0.8]$. Uneven supervision remains under sparse views; we address this with DVR (Sec. 3.4).
 
 ## Dynamic Visibility Regularization
 
-Sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussians appear in fewer views or pixels and receive weaker reconstruction gradients <sup>[8,9]</sup>. Visibility priors have also been explored to regularize sparse-input radiance fields <sup>[10]</sup>. We use DVR via progressive Gaussian dropout.
+Sparse-view optimization remains strongly visibility-dependent. Distant, occluded, or poorly observed Gaussians appear in fewer views or pixels and receive weaker reconstruction gradients <sup>[7,8]</sup>. Visibility priors have also been explored to regularize sparse-input radiance fields <sup>[9]</sup>. We use DVR via progressive Gaussian dropout.
 
 At iteration $t$, DVR randomly masks a subset of Gaussians for dropout rendering. The dropout ratio grows linearly:
 
@@ -71,7 +71,7 @@ $$
 
 where $t$ and $T$ are the current and total iterations, $r_{\max}$ is the maximum dropout ratio, and $\gamma=0.1$--$0.2$ controls the growth rate. Early training keeps weak dropout for geometric convergence; later training increases it against sparse-view overfitting.
 
-Used alone, random dropout can induce opacity or scale compensation; we keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives <sup>[9]</sup>, the dropout branch is left uncompensated, while the full set is rendered in parallel under the same target. Let $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$ denote the full and dropout renderings, and $I$ the ground-truth image. We use the standard color loss
+Used alone, random dropout can induce opacity or scale compensation; we keep a full-render branch as an anchor. Unlike compensated rendering that rescales retained primitives <sup>[8]</sup>, the dropout branch is left uncompensated, while the full set is rendered in parallel under the same target. We denote the images rendered using the complete Gaussian set and the dropout-masked Gaussian set by $I_{\mathrm{full}}$ and $I_{\mathrm{drop}}$, respectively, while $I$ represents the ground-truth image. The standard color loss is formulated as follows:
 
 $$
 \mathcal{L}_{\mathrm{color}}(\hat{I},I)
@@ -91,15 +91,15 @@ $$
 \beta\,\mathcal{L}_{\mathrm{color}}(I_{\mathrm{drop}},I),
 $$
 
-where $\beta=0.5$--$1.0$. Related sparse-view designs further modulate masking with depth and density cues <sup>[39]</sup>, or drop anchors and spherical harmonics <sup>[27]</sup>; DVR instead uses a progressive random schedule with an uncompensated dropout branch.
+where $\beta=0.5$--$1.0$. Related sparse-view designs further modulate masking with depth and density cues <sup>[19]</sup>; DVR instead uses a progressive random schedule with an uncompensated dropout branch.
 
 # EXPERIMENTS
 
 ## Experimental Setup and Datasets
 
-We evaluate SynGS on Mip-NeRF 360 (unbounded 360° scenes) <sup>[40]</sup> and LLFF (forward-facing real captures) <sup>[41]</sup>. All images are downsampled by a factor of 8. Mip-NeRF 360 scenes are tested with 4, 6, and 9 uniformly sampled input views. Metrics are PSNR, SSIM, and LPIPS. We compare SynGS with the NeRF- and 3DGS-based methods listed in Table 1 and Table 2.
+The evaluation of SynGS is conducted using two datasets: Mip-NeRF 360, which contains unbounded 360° scenes <sup>[20]</sup>, and LLFF, which consists of forward-facing real-world captures <sup>[21]</sup>. Images from both datasets are downsampled by a factor of 8. Mip-NeRF 360 scenes are tested with 4, 6, and 9 uniformly sampled input views. Metrics are PSNR, SSIM, and LPIPS. We compare SynGS with the NeRF- and 3DGS-based methods listed in Table 1 and Table 2.
 
-Training follows the standard 3DGS framework. Depth priors come from VGGT-Depth. Consistent with Sec. 3.3, view- and ray-level selection during densification may use dataset ground-truth depth only as a filter; novel-view rendering and all reported metrics do not use ground-truth depth. The model is trained for 30K iterations, with 3DGS initialization optimized for 10K iterations. Floaters are periodically removed during training. Experiments use PyTorch on an NVIDIA RTX 4090 GPU.
+Training follows the standard 3DGS framework. Depth priors come from VGGT-Depth. Consistent with Sec. 3.3, view- and ray-level selection during densification may use dataset ground-truth depth only as a filter; novel-view rendering and all reported metrics do not use ground-truth depth. The model is trained for 30K iterations, with 3DGS initialization optimized for 10K iterations. Floaters are periodically removed during training. The experiments are implemented in PyTorch and executed on an NVIDIA RTX 4090 GPU.
 
 ## Quantitative and Qualitative Results
 
@@ -111,7 +111,7 @@ Table 2. Performance comparisons of sparse-view synthesis on LLFF (4/6/9 views).
 
 [[[TABLE_LLFF]]]
 
-**Mip-NeRF 360 and LLFF.** Table 1 reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. SynGS obtains higher PSNR and SSIM than the compared methods in all three settings, with a more noticeable PSNR difference in the 4-view case: 25.91 dB, compared with 22.35 dB for D²GS <sup>[39]</sup>. However, D²GS obtains lower LPIPS values across the three settings, indicating an advantage in perceptual similarity. Table 2 shows a similar trend. With four views, SynGS achieves favorable results in PSNR, SSIM, and LPIPS; under six views, it obtains higher PSNR and SSIM than the compared methods, with LPIPS close to the lowest reported value. As the number of input views increases to nine, the differences among the compared 3DGS-based methods become smaller: D²GS <sup>[39]</sup> gives slightly higher PSNR and lower LPIPS, while CoR-GS <sup>[13]</sup> achieves slightly higher SSIM. Overall, SynGS shows more pronounced improvements in the four- and six-view settings, suggesting that the proposed framework may be particularly beneficial when the geometric information available from the input views is severely limited.
+**Mip-NeRF 360 and LLFF.** Table 1 reports the results on Mip-NeRF 360 under the 4-, 6-, and 9-view settings. On Mip-NeRF 360, SynGS achieves higher PSNR and SSIM values relative to the evaluated baseline methods under the 4-, 6-, and 9-view configurations, with a more noticeable PSNR difference in the 4-view case: 25.91 dB, compared with 22.35 dB for D²GS <sup>[19]</sup>. However, D²GS obtains lower LPIPS values across the three settings, indicating an advantage in perceptual similarity. Table 2 shows a similar trend. With four views, SynGS achieves favorable results in PSNR, SSIM, and LPIPS; in the six-view LLFF setting, SynGS records higher PSNR and SSIM values than the baseline approaches included in the comparison, with LPIPS close to the lowest reported value. In the nine-view LLFF configuration, the performance differences among the evaluated 3DGS-based approaches are relatively limited. Compared with SynGS, D²GS <sup>[19]</sup> reports a slightly higher PSNR and a lower LPIPS, whereas CoR-GS <sup>[12]</sup> achieves a marginally higher SSIM. Overall, SynGS shows more pronounced improvements in the four- and six-view settings, suggesting that the proposed framework may be particularly beneficial when the geometric information available from the input views is severely limited.
 
 **Qualitative Results.** Figure 3 shows the 4-view comparison on Mip-NeRF 360. SynGS produces fewer floating artifacts and more complete object boundaries, and preserves finer structures where baselines show broken contours or missing details.
 
@@ -133,7 +133,7 @@ Visual Hull Initialization establishes the geometric baseline at 17.51 dB PSNR. 
 
 # CONCLUSION
 
-We present SynGS for sparse-view 3DGS, combining **Visual Hull Initialization**, **VGGT-Guided Densification**, and **Dynamic Visibility Regularization** for more reliable initialization, geometry completion, and reduced sparse-view overfitting. SynGS shows more pronounced improvements under highly sparse-view conditions, particularly in PSNR and SSIM with four or six input views. With nine input views, SynGS maintains higher PSNR and SSIM than the compared methods on Mip-NeRF 360, while the LLFF results remain comparable to those of other evaluated methods. However, the additional geometry introduced during initialization incurs memory and computational overhead. Future work will focus on developing more efficient geometry augmentation strategies to reduce these costs while preserving reconstruction quality.
+We present SynGS for sparse-view 3DGS, combining **Visual Hull Initialization**, **VGGT-Guided Densification**, and **Dynamic Visibility Regularization** for more reliable initialization, geometry completion, and reduced sparse-view overfitting. SynGS shows more pronounced improvements under highly sparse-view conditions, particularly in PSNR and SSIM with four or six input views. With nine input views, on Mip-NeRF 360, SynGS continues to outperform the compared approaches in terms of PSNR and SSIM, whereas its performance on LLFF is generally comparable to that of the other evaluated methods. However, the additional geometry introduced during initialization incurs memory and computational overhead. Our future research will investigate ways to improve the efficiency of geometry augmentation, aiming to lower the associated computational and memory overhead without compromising reconstruction quality.
 
 References
 
@@ -144,8 +144,6 @@ Niemeyer, M., Barron, J. T., Mildenhall, B., Sajjadi, M. S. M., Geiger, A., and 
 Kerbl, B., Kopanas, G., Leimkühler, T., and Drettakis, G., "3D gaussian splatting for real-time radiance field rendering," ACM Transactions on Graphics 42(4), 139:1–139:14 (2023). DOI: https://doi.org/10.1145/3592433.
 
 Lu, T., Yu, M., Xu, L., Xiangli, Y., Wang, L., Lin, D., and Dai, B., "Scaffold-GS: Structured 3D gaussians for view-adaptive rendering," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 20654–20664 (2024). DOI: https://doi.org/10.1109/cvpr52733.2024.01952.
-
-Yu, Z., Chen, A., Huang, B., Sattler, T., and Geiger, A., "Mip-splatting: Alias-free 3D Gaussian splatting," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 19447–19456 (2024). DOI: https://doi.org/10.1109/cvpr52733.2024.01839.
 
 Schönberger, J. L. and Frahm, J.-M., "Structure-from-motion revisited," in [Proc. IEEE Conference on Computer Vision and Pattern Recognition (CVPR)], 4104–4113 (2016). DOI: https://doi.org/10.1109/cvpr.2016.445.
 
@@ -167,51 +165,13 @@ Mildenhall, B., Srinivasan, P. P., Tancik, M., Barron, J. T., Ramamoorthi, R., a
 
 Wang, G., Chen, Z., Loy, C. C., and Liu, Z., "SparseNeRF: Distilling depth ranking for few-shot novel view synthesis," in [Proc. IEEE/CVF International Conference on Computer Vision (ICCV)], 9031–9042 (2023). DOI: https://doi.org/10.1109/iccv51070.2023.00832.
 
-Deng, K., Liu, A., Zhu, J.-Y., and Ramanan, D., "Depth-supervised NeRF: Fewer views and faster training for free," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 12872–12881 (2022). DOI: https://doi.org/10.1109/cvpr52688.2022.01254.
-
-Truong, P., Rakotosaona, M.-J., Manhardt, F., and Tombari, F., "SPARF: Neural radiance fields from sparse and noisy poses," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 4190–4200 (2023). DOI: https://doi.org/10.1109/cvpr52729.2023.00408.
-
-Wu, R., Mildenhall, B., Henzler, P., Park, K., Gao, R., Watson, D., Srinivasan, P. P., Verbin, D., Barron, J. T., Poole, B., and Hoyński, A., "ReconFusion: 3D reconstruction with diffusion priors," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 21551–21561 (2024). DOI: https://doi.org/10.1109/cvpr52733.2024.02036.
-
-Guédon, A. and Lepetit, V., "SuGaR: Surface-aligned Gaussian splatting for efficient 3D mesh reconstruction and high-quality mesh rendering," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 5354–5363 (2024). DOI: https://doi.org/10.1109/cvpr52733.2024.00512.
-
-Huang, B., Yu, Z., Chen, A., Geiger, A., and Gao, S., "2D Gaussian splatting for geometrically accurate radiance fields." arXiv preprint arXiv:2403.17888 (2024). DOI: https://doi.org/10.1145/3641519.3657428.
-
-Bao, Z., Liao, G., Zhou, K., Liu, K., Li, Q., and Qiu, G., "LoopSparseGS: Loop-based sparse-view friendly Gaussian splatting," IEEE Transactions on Image Processing 34, 3889–3902 (2025). DOI: https://doi.org/10.1109/TIP.2025.3574929.
-
-Cheng, K., Long, X., Yang, K., Yao, Y., Yin, W., Ma, Y., Wang, W., and Chen, X., "GaussianPro: 3D Gaussian splatting with progressive propagation." arXiv preprint arXiv:2402.14650 (2024). DOI: https://doi.org/10.48550/arXiv.2402.14650.
-
-Zhou, Z., Xiong, Y.-J., Zhang, J.-C., Xia, C.-M., Qiu, X., and Zhan, H., "Gradient-direction-aware density control for 3D Gaussian splatting." arXiv preprint arXiv:2508.09239 (2025). DOI: https://doi.org/10.48550/arXiv.2508.09239.
-
 Zheng, Y., Jiang, Z., He, S., Sun, Y., Dong, J., Zhang, H., and Du, Y., "NexusGS: Sparse view synthesis with epipolar depth priors in 3D Gaussian splatting," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 26800–26809 (2025). DOI: https://doi.org/10.1109/cvpr52734.2025.02496.
-
-Patle, G., Girgaonkar, N., Somraj, N., and Soundararajan, R., "AD-GS: Alternating densification for sparse-input 3D Gaussian splatting." arXiv preprint arXiv:2509.11003 (2025). DOI: https://doi.org/10.1145/3757377.3763993.
-
-Xiong, H., Muttukuru, S., Upadhyay, R., Chari, P., and Kadambi, A., "SparseGS: Real-time 360° sparse view synthesis using Gaussian splatting," in [Proc. International Conference on 3D Vision (3DV)], (2025). DOI: https://doi.org/10.1109/3dv66043.2025.00100.
-
-Fang, S., Shen, I.-C., Zhang, X., Wang, Z., Wang, Y., Ding, W., Yu, G., and Igarashi, T., "Dropping anchor and spherical harmonics for sparse-view Gaussian splatting." arXiv preprint arXiv:2602.20933 (2026). DOI: https://doi.org/10.48550/arXiv.2602.20933.
-
-Wang, S., Leroy, V., Cabon, Y., Chidlovskii, B., and Revaud, J., "DUSt3R: Geometric 3D vision made easy," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 20697–20709 (2024). DOI: https://doi.org/10.1109/cvpr52733.2024.01956.
-
-Fan, Z., Cong, W., Wen, K., Wang, K., Zhang, J., Ding, X., Xu, D., Ivanovic, B., Pavone, M., Pavlakos, G., Wang, Z., and Wang, Y., "InstantSplat: Sparse-view Gaussian splatting in seconds." arXiv preprint arXiv:2403.20309 (2024). DOI: https://doi.org/10.48550/arXiv.2403.20309.
-
-Charatan, D., Li, S. L., Tagliasacchi, A., and Sitzmann, V., "pixelSplat: 3D Gaussian splats from image pairs for scalable generalizable 3D reconstruction," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 19457–19467 (2024). DOI: https://doi.org/10.1109/cvpr52733.2024.01840.
-
-Chen, Y., Xu, H., Zheng, C., Zhuang, B., Pollefeys, M., Geiger, A., Cham, T.-J., and Cai, J., "MVSplat: Efficient 3D Gaussian splatting from sparse multi-view images," in [Proc. European Conference on Computer Vision (ECCV)], 370–381 (2024). DOI: https://doi.org/10.1007/978-3-031-72664-4_21.
-
-Cao, C., Ren, X., and Fu, Y., "MVSFormer++: Revealing the devil in transformer's details for multi-view stereo." arXiv preprint arXiv:2401.11673 (2024). DOI: https://doi.org/10.48550/arXiv.2401.11673.
 
 Yang, L., Kang, B., Huang, Z., Zhao, Z., Xu, X., Feng, J., and Zhao, H., "Depth anything V2," in [Advances in Neural Information Processing Systems (NeurIPS)], 37, 21875–21911 (2024). DOI: https://doi.org/10.52202/079017-0688.
 
-Wang, R., Xu, S., Dai, C., Xiang, J., Deng, Y., Tong, X., and Yang, J., "MoGe: Unlocking accurate monocular geometry estimation for open-domain images with optimal training supervision." arXiv preprint arXiv:2410.19115 (2024). DOI: https://doi.org/10.1109/cvpr52734.2025.00496.
-
 Wang, J., Chen, M., Karaev, N., Vedaldi, A., Rupprecht, C., and Novotny, D., "VGGT: Visual geometry grounded transformer," in [Proc. IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)], 5294–5306 (2025). DOI: https://doi.org/10.1109/cvpr52734.2025.00499.
 
-Li, J., Wen, Z., Zhang, L., Hu, J., Hou, F., Zhang, Z., and He, Y., "GS-Octree: Octree-based 3D Gaussian splatting for robust object-level 3D reconstruction under strong lighting." arXiv preprint arXiv:2406.18199 (2024). DOI: https://doi.org/10.1111/cgf.15206.
-
 Laurentini, A., "The visual hull concept for silhouette-based image understanding," IEEE Transactions on Pattern Analysis and Machine Intelligence 16(2), 150–162 (1994). DOI: https://doi.org/10.1109/34.273735.
-
-Zhang, B., Fang, C., Shrestha, R., Liang, Y., Long, X., and Tan, P., "RaDe-GS: Rasterizing depth in Gaussian splatting." arXiv preprint arXiv:2406.01467 (2024). DOI: https://doi.org/10.1145/3789201.
 
 Song, M., Lin, X., Zhang, D., Li, H., Li, X., Du, B., and Qi, L., "D2GS: Depth-and-density guided gaussian splatting for stable and accurate sparse-view reconstruction." arXiv preprint arXiv:2510.08566 (2025). DOI: https://doi.org/10.48550/arXiv.2510.08566.
 
